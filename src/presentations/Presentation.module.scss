@@ -1,0 +1,27 @@
+@use "../settings";
+
+.title {
+  font-size: 3em !important;
+}
+
+.subtitle {
+  color: settings.$avisiDarkGray !important;
+}
+
+.stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+
+  .child {
+    grid-area: 1 / 1;
+  }
+}
+
+.frame {
+  border: none;
+}
+
+.drop-shadow {
+  filter: drop-shadow(0 0 5px #000);
+}

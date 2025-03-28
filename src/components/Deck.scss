@@ -1,0 +1,96 @@
+/**
+ * White theme for reveal.js. This is the opposite of the 'black' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+// Default mixins and settings -----------------
+@use "sass:color";
+@use "../settings";
+@import "../../node_modules/reveal.js/css/theme/template/mixins";
+@import "../../node_modules/reveal.js/css/theme/template/settings";
+// ---------------------------------------------
+
+// Include theme-specific fonts
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fff;
+
+$mainColor: #595959;
+$headingColor: settings.$avisiDarkBlue;
+
+$mainFontSize: 42px * settings.$avisiFontScale;
+$mainFont: 'Poppins', Helvetica, sans-serif;
+$headingFont: 'Poppins', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingFontWeight: bold;
+$linkColor: settings.$avisiLightBlue;
+$linkColorHover: color.scale($linkColor, $lightness: 15%);
+$selectionBackgroundColor: color.scale($linkColor, $lightness: 25%);
+
+$heading1Size: 2.5em * settings.$avisiFontScale;
+$heading2Size: 1.6em * settings.$avisiFontScale;
+$heading3Size: 1.3em * settings.$avisiFontScale;
+$heading4Size: 1.0em * settings.$avisiFontScale;
+
+$overlayElementBgColor: 0, 0, 0;
+$overlayElementFgColor: 240, 240, 240;
+
+// Change text colors against dark slide backgrounds
+@include dark-bg-text-color(#fff);
+
+:root {
+  --avisi-logo-height: #{settings.$avisiLogoHeight};
+  --avisi-logo-margin: #{settings.$avisiLogoMargin};
+  --avisi-footer-height: #{settings.$avisiFooterHeight};
+  --avisi-color-background: #{settings.$avisiBackground};
+  --avisi-color-dark-blue: #{settings.$avisiDarkBlue};
+  --avisi-color-light-blue: #{settings.$avisiLightBlue};
+  --avisi-color-dark-gray: #{settings.$avisiDarkGray};
+  --avisi-color-light-gray: #{settings.$avisiLightGray};
+}
+
+.reveal :is(h1, h2, h3, h4) span.avisi-subtitle {
+  font-weight: normal;
+  font-size: smaller;
+  color: settings.$avisiDarkGray;
+}
+
+.reveal :is(h1, h2, h3, h4).avisi-subtitle {
+  color: settings.$avisiDarkGray;
+}
+
+.reveal .slide-number {
+  background: transparent;
+  padding: 0 calc(#{settings.$footerPadding} * 2) 0 0;
+  bottom: 0;
+  right: 0;
+  height: settings.$avisiFooterHeight;
+  display: flex !important;
+  align-items: center;
+
+  a {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+  }
+}
+
+// Theme template ------------------------------
+@import "../../node_modules/reveal.js/css/theme/template/theme";
+// ---------------------------------------------
+
+.reveal pre {
+  font-size: 0.65em;
+}
+
+.reveal table td {
+  border-bottom: none;
+}
+
+.reveal li::marker {
+  color: settings.$avisiLightBlue;
+}
