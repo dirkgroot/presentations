@@ -2531,9 +2531,9 @@ reusify@^1.0.4:
   integrity sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==
 
 reveal.js@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/reveal.js/-/reveal.js-5.1.0.tgz#dfaa4631127e739aa8ebbaa425d653e72d799e66"
-  integrity sha512-KDt7m0+xwKV6nAZt4CNPVFBf42sTKRQapg0bGGKB5PKO5XvChnMfwlZkybydHiQJ7p5+6LbHKRGrhXODdoNIaA==
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/reveal.js/-/reveal.js-5.2.1.tgz#22e5f4aca16b2b9efc0fef7b8b62455861fef39c"
+  integrity sha512-r7//6mIM5p34hFiDMvYfXgyjXqGRta+/psd9YtytsgRlrpRzFv4RbH76TXd2qD+7ZPZEbpBDhdRhJaFgfQ7zNQ==
 
 robust-predicates@^3.0.2:
   version "3.0.2"
