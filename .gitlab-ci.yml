@@ -1,0 +1,27 @@
+stages:
+  - build
+  - publish
+
+build:
+  stage: build
+  image: node:20-alpine
+  before_script:
+    - yarn install
+  script:
+    - yarn build
+  artifacts:
+    paths:
+      - dist
+  cache:
+    key:
+      files:
+        - yarn.lock
+    paths:
+      - node_modules
+
+pages:
+  stage: publish
+  needs: [ build ]
+  artifacts:
+    paths:
+      - dist
