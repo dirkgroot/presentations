@@ -1,9 +1,9 @@
 stages:
-  - build
   - publish
 
 build:
-  stage: build
+  stage: publish
+  pages: true
   image: node:20-alpine
   before_script:
     - yarn install
@@ -18,10 +18,3 @@ build:
         - yarn.lock
     paths:
       - node_modules
-
-pages:
-  stage: publish
-  needs: [ build ]
-  artifacts:
-    paths:
-      - dist
