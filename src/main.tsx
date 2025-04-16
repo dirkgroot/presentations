@@ -1,4 +1,3 @@
-import {StrictMode} from "react";
 import {createRoot} from "react-dom/client";
 import "highlight.js/scss/ir-black.scss";
 import "@fontsource/poppins/400.css";
@@ -9,13 +8,11 @@ import {DesigningWithTypes} from "./presentations/DesigningWithTypes.tsx";
 import {PresentationListPage} from "./PresentationListPage.tsx";
 
 createRoot(document.body).render(
-  <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<PresentationListPage/>}/>
-        <Route path="/designing-with-types" element={<DesigningWithTypes/>}/>
-        <Route path="/designing-with-types/scroll" element={<DesigningWithTypes scroll/>}/>
-      </Routes>
-    </BrowserRouter>
-  </StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<PresentationListPage/>}/>
+      <Route path="/designing-with-types" element={<DesigningWithTypes/>}/>
+      <Route path="/designing-with-types/scroll" element={<DesigningWithTypes scroll/>}/>
+    </Routes>
+  </BrowserRouter>,
 );
