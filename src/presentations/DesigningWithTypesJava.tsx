@@ -25,7 +25,7 @@ const developerWorkflowDiagramWithRedLinks1 = developerWorkflowDiagram + "    li
 const developerWorkflowDiagramWithRedLinks2 = developerWorkflowDiagram + "    linkStyle 0,2,3 stroke:red,stroke-width:5px,color:red\n";
 const developerWorkflowDiagramWithRedLinks3 = developerWorkflowDiagram + "    linkStyle 0,2,4,6 stroke:red,stroke-width:5px,color:red\n";
 
-export const DesigningWithTypes = ({scroll}: PresentationProps) => (
+export const DesigningWithTypesJava = ({scroll}: PresentationProps) => (
   <Deck title={"Designing with types"} scroll={scroll}>
     {/* Avisi logo(s) */}
     <Avisi25JaarSlide/>
@@ -204,12 +204,18 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
         </section>
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1>Properties<Emphasis>.</Emphasis></h1>
-          <Code language="kotlin" lineNumbers>{`
-            class Customer(
-              var id: Long,
-              var name: String,
-              var emailAddress: String,
-            )
+          <Code language="java" lineNumbers>{`
+            class Customer {
+              private Long id;
+              private String name;
+              private String emailAddress;
+
+              public Long getId() { return id; }
+              public void setId(Long id) { this.id = id; }
+              public String getName() { return name; }
+              public void setName(String name) { this.name = name; }
+              // ...
+            }
           `}</Code>
         </section>
         {/* Make it safe */}
@@ -217,12 +223,19 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
           <h1>Properties<Emphasis>.</Emphasis></h1>
           <h2 className={styles.subtitle}>Make it <Emphasis><b>safe</b></Emphasis></h2>
           <p>Introduce immutability</p>
-          <Code language="kotlin" lineNumbers="2">{`
-            class Customer(
-              val id: Long,
-              var name: String,
-              var emailAddress: String,
-            )
+          <Code language="java" lineNumbers="|2,6,8">{`
+            class Customer {
+              private final Long id;
+              private String name;
+              private String emailAddress;
+
+              public Customer(Long id, String name, String emailAddress) { this.id = id; /* ... */ }
+
+              public Long getId() { return id; }
+              public String getName() { return name; }
+              public void setName(String name) { this.name = name; }
+              // ...
+            }
           `}</Code>
         </section>
         {/* Reveal intent */}
@@ -230,15 +243,22 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
           <h1>Properties<Emphasis>.</Emphasis></h1>
           <h2 className={styles.subtitle}>Reveal <Emphasis><b>intent</b></Emphasis></h2>
           <p>Introduce value objects</p>
-          <Code language="kotlin" lineNumbers="3,4,7,8">{`
-            class Customer(
-              val id: Long,
-              var name: CustomerName,
-              var emailAddress: EmailAddress,
-            )
+          <Code language="java" lineNumbers="3,4,6,9,10|14-15">{`
+            public class Customer {
+              private final Long id;
+              private CustomerName name;
+              private EmailAddress emailAddress;
 
-            data class CustomerName(private val value: String) { init { /* validate */ } }
-            data class EmailAddress(private val value: String) { init { /* validate */ } }
+              public Customer(Long id, CustomerName name, EmailAddress emailAddress) { this.id = id; /* ... */ }
+
+              public Long getId() { return id; }
+              public CustomerName getName() { return name; }
+              public void setName(CustomerName name) { this.name = name; }
+              // ...
+            }
+
+            record CustomerName(String value) { CustomerName { /* validate */ } }
+            record EmailAddress(String value) { EmailAddress { /* validate */ } }
           `}</Code>
         </section>
       </AutoAnimate>
@@ -254,25 +274,28 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
           <h1>Simple business rules<Emphasis>.</Emphasis></h1>
           <ColumnLayout>
             <Column>
-              <Code language="kotlin" lineNumbers>{`
-                class OrderService {
-                  fun completeOrder(order: Order) {
-                    if (order.paymentId != null) {
-                      order.status = 
-                        OrderStatus.COMPLETED
-                    }
+              <Code language="java" lineNumbers>{`
+                public class OrderService {
+                  public void completeOrder(Order order) {
+                    if (order.paymentId != null)
+                      order.setStatus(OrderStatus.COMPLETED);
                   }
                 }
               `}</Code>
             </Column>
             <Column>
-              <Code language="kotlin" lineNumbers>{`
-                class Order(
-                  val id: Long,
-                  val customerId: Long,
-                  var status: OrderStatus,
-                  var paymentId: Long?,
-                )
+              <Code language="java" lineNumbers>{`
+                public class Order {
+                  private final long id;
+                  private final long customerId;
+                  private OrderStatus status;
+                  private Long paymentId;
+
+                  public void setStatus(OrderStatus status) {
+                    this.status = status;
+                  }
+                  // more getters and setters
+                }
               `}</Code>
             </Column>
           </ColumnLayout>
@@ -284,30 +307,38 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1>Simple business rules<Emphasis>.</Emphasis></h1>
           <h2 className={styles.subtitle}>Make it <Emphasis><b>safe</b></Emphasis></h2>
-          <Code language="kotlin" lineNumbers>{`
-            class Order(
-              val id: Long,
-              val customerId: Long,
-              var status: OrderStatus,
-              var paymentId: Long?,
-            )
+          <Code language="java" lineNumbers>{`
+            public class Order {
+              private final long id;
+              private final long customerId;
+              private OrderStatus status;
+              private Long paymentId;
+
+              public void setStatus(OrderStatus status) {
+                this.status = status;
+              }
+              // more getters and setters
+            }
           `}</Code>
         </section>
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1>Simple business rules<Emphasis>.</Emphasis></h1>
           <h2 className={styles.subtitle}>Make it <Emphasis><b>safe</b></Emphasis></h2>
-          <Code language="kotlin" lineNumbers="5-6|8-12">{`
-            class Order(
-              val id: Long,
-              val customerId: Long,
-            ) {
-              var status: OrderStatus private set
-              var paymentId: Long? private set
+          <Code language="java" lineNumbers="7-9|12-15">{`
+            public class Order {
+              private final long id;
+              private final long customerId;
+              private OrderStatus status;
+              private Long paymentId;
 
-              fun complete() {
-                if (paymentId != null) {
-                  status = OrderStatus.COMPLETED
-                }
+              // public void setStatus(OrderStatus status) {
+              //   this.status = status;
+              // }
+              // more getters and setters
+
+              public void complete() {
+                if (paymentId != null)
+                  status = OrderStatus.COMPLETED;
               }
             }
           `}</Code>
@@ -326,10 +357,11 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
         </section>
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1>Statuses<Emphasis>.</Emphasis></h1>
-          <Code language="kotlin" lineNumbers>{`
+          <Code language="java" lineNumbers>{`
             class Order {
-              var status: OrderStatus = OrderStatus.PENDING
-                private set
+              private OrderStatus status = OrderStatus.PENDING;
+
+              public OrderStatus getStatus() { return status; }
             }
           `}</Code>
           <p className="fragment">The type signature does not reveal <Emphasis><b>intent</b></Emphasis>.</p>
@@ -337,14 +369,15 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1>Statuses<Emphasis>.</Emphasis></h1>
           <h2 className={styles.subtitle}>Reveal <Emphasis><b>intent</b></Emphasis></h2>
-          <Code language="kotlin" lineNumbers={"|1,6"}>{`
-            class Order private constructor(status: OrderStatus) {
-              var status: OrderStatus = status
-                private set
+          <Code language="java" lineNumbers={"|4,8"}>{`
+            class Order {
+              private OrderStatus status;
 
-              companion object {
-                fun createPending(): Order = Order(OrderStatus.PENDING)
-              }
+              private Order(OrderStatus status) { this.status = status; }
+
+              public OrderStatus getStatus() { return status; }
+
+              public static Order createPending() { return new Order(OrderStatus.PENDING); }
             }
           `}</Code>
           <p className="fragment"><Emphasis><b>Intent</b></Emphasis> is now clear in the type
@@ -364,15 +397,14 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1>Ownership<Emphasis>.</Emphasis></h1>
           <h2 className={styles.subtitle}>This looks pretty <Emphasis><b>safe</b></Emphasis>, right?</h2>
-          <Code language="kotlin" lineNumbers>{`
-            class Order {
-              var status: OrderStatus = status
-                private set
-              private val items: MutableList<OrderItem> = mutableListOf()
-  
-              fun addItem(item: OrderItem) {
+          <Code language="java" lineNumbers>{`
+            public class Order {
+              private OrderStatus status;
+              private List<OrderItem> items = new ArrayList<>();
+
+              public void addItem(OrderItem item) {
                 if (status == OrderStatus.PENDING)
-                  items.add(item)
+                  items.add(item);
               }
             }
           `}</Code>
@@ -381,13 +413,19 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1>Ownership<Emphasis>.</Emphasis></h1>
           <h2 className={styles.subtitle}>Uhm... 🤔</h2>
-          <Code language="kotlin" lineNumbers={"5-7"}>{`
-            class Order {
-              // ...
+          <Code language="java" lineNumbers={"11-13"}>{`
+            public class Order {
+              private OrderStatus status;
+              private List<OrderItem> items = new ArrayList<>();
+
+              public void addItem(OrderItem item) {
+                if (status == OrderStatus.PENDING)
+                  items.add(item);
+              }
             }
   
             interface OrderItemRepository {
-              fun insert(orderItem: OrderItem)
+              void insert(OrderItem orderItem);
             }
           `}</Code>
           <p className="fragment">We can violate a business rule by
@@ -398,18 +436,18 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1>Ownership<Emphasis>.</Emphasis></h1>
           <h2 className={styles.subtitle}>Reveal <Emphasis><b>intent</b></Emphasis></h2>
-          <Code language="kotlin" lineNumbers={"2-5"}>{`
-          class Order {
-            fun addItem(product: Product, quantity: Int) {
-              if (status == OrderStatus.PENDING)
-                items.add(OrderItem(this.id, product, quantity))
-            }              
-          }
-
-          interface OrderItemRepository {
-            fun insert(orderItem: OrderItem)
-          }
-        `}</Code>
+          <Code language="java" lineNumbers={"2-5"}>{`
+            public class Order {
+              public void addItem(Product product, int quantity) {
+                if (status == OrderStatus.PENDING)
+                  items.add(new OrderItem(this.id, product, quantity));
+              }              
+            }
+  
+            interface OrderItemRepository {
+              void insert(OrderItem orderItem);
+            }
+          `}</Code>
           <p className="fragment">The type signature of <Emphasis><code>addItem</code></Emphasis> reveals
             that <Emphasis><code>Order</code></Emphasis> is responsible for
             creating <Emphasis><code>OrderItem</code></Emphasis>s.</p>
@@ -421,15 +459,14 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
           <h1>Ownership<Emphasis>.</Emphasis></h1>
           <h2 className={styles.subtitle}>Constrain <Emphasis><code>OrderItem</code></Emphasis> instantiation</h2>
           <div className={"fragment"}>
-            <p>In <Emphasis>Java</Emphasis>, we can make <Emphasis><code>OrderItem</code></Emphasis> an inner class,
-              with a private constructor.</p>
+            <p>We can make <Emphasis><code>OrderItem</code></Emphasis> an inner class with a private constructor.</p>
             <Code language="java" lineNumbers>{`
-              class Order {
-                static class OrderItem {
+              public class Order {
+                public static class OrderItem {
                   private OrderItem(Long orderId, Product product, int quantity) { /* initialization */ }
                 }
                 
-                void addItem(Product product, int quantity) {
+                public void addItem(Product product, int quantity) {
                   if (status == OrderStatus.PENDING)
                     items.add(new OrderItem(this.id, product, quantity));
                 }
@@ -438,68 +475,46 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
             <p className={"fragment"}>This design
               is <Emphasis><b>safe</b></Emphasis> because <Emphasis><code>OrderItem</code></Emphasis> cannot be
               instantiated outside of <Emphasis><code>Order</code></Emphasis>.</p>
-            <p className={"fragment"}>In <Emphasis>Kotlin</Emphasis>, private constructors of inner classes are not
-              accessible from the outer class. So we need an alternative solution.</p>
           </div>
         </section>
       </AutoAnimate>
       <section data-background={Backgrounds.WhiteWithFooter}>
         <h1>Ownership<Emphasis>.</Emphasis></h1>
         <h2 className={styles.subtitle}>Constrain <Emphasis><code>OrderItem</code></Emphasis> instantiation</h2>
-        <p>This works in <Emphasis>Kotlin</Emphasis></p>
-        <Code language="kotlin" lineNumbers={"1,4,5,10"}>{`
-            sealed abstract class OrderItem(id: Long, product: Product, quantity: Int)
-  
-            class Order {
-              private class OrderItemImpl(id: Long, product: Product, quantity: Int)
-                : OrderItem(id, product, quantity)
-              private val items: MutableList<OrderItem> = mutableListOf()
-  
-              fun addItem(product: Product, quantity: Int) {
-                if (status == OrderStatus.PENDING)
-                  items.add(OrderItemImpl(this.id, product, quantity))
-              }              
-            }
-          `}</Code>
-        <p className="fragment">It's <Emphasis><b>safe</b></Emphasis>!</p>
-        <p className="fragment">It works best when domain code is in a separate module.</p>
-        <p className="fragment">It's a bit clunky.</p>
-      </section>
-      <section data-background={Backgrounds.WhiteWithFooter}>
-        <h1>Ownership<Emphasis>.</Emphasis></h1>
-        <h2 className={styles.subtitle}>Constrain <Emphasis><code>OrderItem</code></Emphasis> instantiation</h2>
-        <p>This works in <Emphasis>Kotlin</Emphasis> and in <Emphasis>Java</Emphasis></p>
-        <Code language="kotlin" lineNumbers={"1|3-6|11-13"}>{`
-          class OrderItem private constructor(id: Long, product: Product, quantity: Int) {
-            companion object {
-              fun createForOrder(order: Order, product: Product, quantity: Int): OrderItem {
-                require(order.status == OrderStatus.PENDING) { "Order is not pending" }
-                return OrderItem(order.id, product, quantity)
-              }
+        <Code language="java" lineNumbers={"2|4-7|11-13"}>{`
+          public class OrderItem {
+            private OrderItem(Long id, Product product, int quantity) { /* initialization */ }
+
+            public static OrderItem createForOrder(Order order, Product product, int quantity) {
+              assert order.getStatus() == OrderStatus.PENDING : "Order is not pending";
+              return new OrderItem(order.getId(), product, quantity);
             }
           }
 
-          class Order {
-            fun addItem(product: Product, quantity: Int) {
+          public class Order {
+            public void addItem(Product product, int quantity) {
               items.add(OrderItem.createForOrder(this, product, quantity))
             }              
           }
         `}</Code>
         <p className="fragment">It's <Emphasis><b>safe</b></Emphasis>!</p>
-        <p className="fragment">Still clunky. Responsibility for checking order status
+        <p className="fragment">It's clunky. Responsibility for checking order status
           in <Emphasis><code>OrderItem</code></Emphasis>, instead of <Emphasis><code>Order</code></Emphasis> 😐.</p>
       </section>
       <section data-background={Backgrounds.WhiteWithFooter}>
         <h1>Ownership<Emphasis>.</Emphasis></h1>
         <h2 className={styles.subtitle}>Constrain <Emphasis><code>OrderItem</code></Emphasis> instantiation</h2>
-        <p>Alternative, cleaner solution in <Emphasis>Kotlin</Emphasis></p>
-        <Code language="kotlin" lineNumbers={"|1,5,6"}>{`
-          class OrderItem internal constructor(orderId: Long, id: Long, product: Product, quantity: Int)
+        <p>Alternative solution using Java modules</p>
+        <Code language="java" lineNumbers={"|2,3,8,9"}>{`
+          public class OrderItem {
+            // Package private constructor
+            OrderItem(long orderId, long id, Product product, int quantity) { /* initialization */ }
+          }
 
-          class Order {
-            fun addItem(product: Product, quantity: Int) {
+          public class Order {
+            public void addItem(Product product, int quantity) {
               if (status == OrderStatus.PENDING)
-                items.add(OrderItem(this.id, product, quantity))
+                items.add(new OrderItem(this.id, product, quantity));
             }              
           }
         `}</Code>
@@ -518,31 +533,30 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1>Deleting stuff<Emphasis>.</Emphasis></h1>
           <h2 className={styles.subtitle}>Is this <Emphasis><b>safe</b></Emphasis>?</h2>
-          <Code language="kotlin" lineNumbers>{`
-            class Order {
-              var status: OrderStatus
-                private set
+          <Code language="java" lineNumbers>{`
+            public class Order {
+              private OrderStatus status;
+              // getters and setters
             }
-  
-            class OrderJDBCRepository : OrderRepository {
-              fun delete(order: Order) { /* ... */ }
+
+            public class OrderJDBCRepository implements OrderRepository {
+              public void delete(Order order) { /* ... */ }
             }
           `}</Code>
         </section>
 
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1>Deleting stuff<Emphasis>.</Emphasis></h1>
-          <h2 className={styles.subtitle}>
-            What if deleting an <Emphasis><code>Order</code></Emphasis> is not always allowed?
-          </h2>
-          <Code language="kotlin" lineNumbers>{`
-            class Order {
-              var status: OrderStatus
-                private set
+          <h2 className={styles.subtitle}>What if deleting an <Emphasis><code>Order</code></Emphasis> is not always
+            allowed?</h2>
+          <Code language="java" lineNumbers>{`
+            public class Order {
+              private OrderStatus status;
+              // getters and setters
             }
   
-            class OrderJDBCRepository : OrderRepository {
-              fun delete(order: Order) { /* ... */ }
+            public class OrderJDBCRepository implements OrderRepository {
+              public void delete(Order order) { /* ... */ }
             }
           `}</Code>
         </section>
@@ -552,17 +566,16 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
           <h2 className={styles.subtitle}>What if deleting an <Emphasis><code>Order</code></Emphasis> is not always
             allowed?</h2>
           <p>Add a runtime check?</p>
-          <Code language="kotlin" lineNumbers={"5,9-12|1,2,3"}>{`
-            class Order {
-              var status: OrderStatus
-                private set
-                
-              val isDeletable: Boolean get() = status == OrderStatus.COMPLETED
+          <Code language="java" lineNumbers={"4,8-11"}>{`
+            public class Order {
+              private OrderStatus status;
+              // getters and setters
+              public boolean isDeletable() { return status == OrderStatus.COMPLETED; }
             }
   
-            class OrderJDBCRepository : OrderRepository {
-              fun delete(order: Order) {
-                require(order.isDeletable) { "Order is not deletable" }
+            public class OrderJDBCRepository implements OrderRepository {
+              public void delete(Order order) {
+                assert order.isDeletable() : "Order is not deletable";
                 // ...
               }
             }
@@ -575,44 +588,48 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1>Deleting stuff<Emphasis>.</Emphasis></h1>
           <h2 className={styles.subtitle}>We could introduce a <Emphasis><b>value object</b></Emphasis> instead</h2>
-          <Code language="kotlin" lineNumbers={"1,7-10|14"}>{`
-            data class DeletableOrder internal constructor(val id: Long) {}
+          <Code language="java" lineNumbers={"1-4,9-12|16"}>{`
+            public final class DeletableOrder {
+              final long id;
+              DeletableOrder(long id) { this.id = id }
+            }
 
-            class Order {
-              var status: OrderStatus
-                private set
-                
-              val asDeletable: DeletableOrder get() = {
-                require(status == OrderStatus.COMPLETED) { "Order is not deletable" }
-                return DeletableOrder(this.id)
+            public class Order {
+              private OrderStatus status;
+
+              public DeletableOrder asDeletable() {
+                assert status == OrderStatus.COMPLETED : "Order is not deletable";
+                return new DeletableOrder(this.id);
               }
             }
   
-            class OrderJDBCRepository : OrderRepository {
-              fun delete(order: DeletableOrder) { /* ... */ }
+            public class OrderJDBCRepository implements OrderRepository {
+              public void delete(DeletableOrder order) { /* ... */ }
             }
           `}</Code>
           <p className={"fragment"}>The type signatures reveal <Emphasis><b>intent</b></Emphasis>.</p>
           <p className={"fragment"}>The <Emphasis><code>delete</code></Emphasis> function
             is <Emphasis><b>safe</b></Emphasis> to use. It cannot be used in an invalid way.</p>
+          <p className={"fragment"}>
+            <Emphasis><code>Optional</code></Emphasis> or <Emphasis><code>null</code></Emphasis> can be used instead of
+            throwing an exception.</p>
         </section>
 
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1>Deleting stuff<Emphasis>.</Emphasis></h1>
-          <h2 className={styles.subtitle}>
-            We could introduce a <Emphasis><b>value object</b></Emphasis> instead
-          </h2>
+          <h2 className={styles.subtitle}>We could introduce a <Emphasis><b>value object</b></Emphasis> instead</h2>
           <p>An alternative solution, using the same general approach</p>
-          <Code language="kotlin" lineNumbers={"|1,8,9"}>{`
-            data class DeletableOrder internal constructor(val id: Long) {}
-
-            class Order {
-              // ...
+          <Code language="java" lineNumbers={"|1-4,9,10"}>{`
+            public class DeletableOrder {
+              final long id;
+              DeletableOrder(long id) { this.id = id; }
             }
+
+            public class Order { /* ... */ }
   
-            class OrderJDBCRepository : OrderRepository {
-              fun findDeletableOrder(id: Long): DeletableOrder? { /* ... */ }
-              fun delete(order: DeletableOrder) { /* ... */ }
+            public class OrderJDBCRepository implements OrderRepository {
+              public DeletableOrder findDeletableOrder(long id) { /* ... */ }
+              public void delete(DeletableOrder order) { /* ... */ }
             }
           `}</Code>
           <p className={"fragment"}>This works too, but it is somewhat limited.</p>
@@ -630,18 +647,23 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1>Statuses revisited<Emphasis>.</Emphasis></h1>
           <h2 className={styles.subtitle}>Can we improve this even further?</h2>
-          <Code language="kotlin" lineNumbers>{`
-            data class DeletableOrder internal constructor(val id: Long) {}
+          <Code language="java" lineNumbers>{`
+            public class DeletableOrder {
+              final long id;
+              DeletableOrder(long id) { this.id = id; }
+            }
 
-            class Order {
-              val asDeletable: DeletableOrder get() = {
-                require(status == OrderStatus.COMPLETED) { "Order is not deletable" }
-                return DeletableOrder(this.id)
+            public class Order {
+              private OrderStatus status;
+
+              public DeletableOrder asDeletable() {
+                assert status == OrderStatus.COMPLETED : "Order is not deletable";
+                return new DeletableOrder(this.id);
               }
             }
   
-            class OrderJDBCRepository : OrderRepository {
-              fun delete(order: DeletableOrder) { /* ... */ }
+            public class OrderJDBCRepository implements OrderRepository {
+              public void delete(DeletableOrder order) { /* ... */ }
             }
           `}</Code>
           <p className={"fragment"}>The signature of <Emphasis><code>delete</code></Emphasis> does not fully
@@ -652,11 +674,11 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
           <h1>Statuses revisited<Emphasis>.</Emphasis></h1>
           <h2 className={styles.subtitle}>We could introduce a new type <Emphasis><code>CompletedOrder</code></Emphasis>
           </h2>
-          <Code language="kotlin" lineNumbers>{`
-            class CompletedOrder(/* ... */)
+          <Code language="java" lineNumbers>{`
+            public class CompletedOrder { /* ... */ }
 
             interface OrderRepository {
-              fun delete(order: CompletedOrder)
+              void delete(CompletedOrder order);
             }
           `}</Code>
           <p className={"fragment"}>The type signature of <Emphasis><code>delete</code></Emphasis> now reveals that only
@@ -668,13 +690,13 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1>Statuses revisited<Emphasis>.</Emphasis></h1>
           <h2 className={styles.subtitle}>Sum types to the rescue!</h2>
-          <Code language="kotlin" lineNumbers>{`
-            sealed interface Order
-            class PendingOrder(/* ... */) : Order
-            class CompletedOrder(/* ... */) : Order
+          <Code language="java" lineNumbers>{`
+            public sealed interface Order permits PendingOrder, CompletedOrder { /* ... */ }
+            public final class PendingOrder implements Order { /* ... */ }
+            public final class CompletedOrder implements Order { /* ... */ }
 
             interface OrderRepository {
-              fun delete(order: CompletedOrder)
+              void delete(CompletedOrder order);
             }
           `}</Code>
           <p className={"fragment"}>We model the status of an <Emphasis><code>Order</code></Emphasis> using types,
@@ -686,14 +708,14 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1>Statuses revisited<Emphasis>.</Emphasis></h1>
           <h2 className={styles.subtitle}>Entities ➡️ values</h2>
-          <Code language="kotlin" lineNumbers={"|3-5"}>{`
-            sealed interface Order
+          <Code language="java" lineNumbers={"|3-5"}>{`
+            public sealed interface Order permits PendingOrder, CompletedOrder { /* ... */ }
 
-            data class PendingOrder(/* ... */) : Order {
-              fun complete() : CompletedOrder { /* ... */ }
+            public final class PendingOrder implements Order
+              public CompletedOrder complete() { /* ... */ }
             }
 
-            data class CompletedOrder(/* ... */) : Order
+            public final class CompletedOrder implements Order { /* ... */ }
           `}</Code>
           <p className={"fragment"}>Every state of an entity is an <Emphasis>immutable value</Emphasis>.</p>
           <p className={"fragment"}>Operations result in a <Emphasis>new value</Emphasis> representing the <Emphasis>new
@@ -755,8 +777,8 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
         </li>
         <li className="fragment"><Emphasis>Types</Emphasis> can make your code expressive</li>
         <li className="fragment"><Emphasis>Encapsulation</Emphasis> is the bread and butter of designing with types</li>
-        <li className="fragment">Both <Emphasis>Kotlin</Emphasis> and <Emphasis>Java</Emphasis> have powerful type
-          systems, and we can probably benefit more from them than we currently do
+        <li className="fragment"><Emphasis>Java</Emphasis> has powerful type systems, and we can probably benefit more
+          from this than we currently do
         </li>
         <li className="fragment"><Emphasis>Not all bugs</Emphasis> can be prevented with types</li>
         <li className="fragment">There is <Emphasis>no perfect design</Emphasis>, it's
@@ -768,7 +790,7 @@ export const DesigningWithTypes = ({scroll}: PresentationProps) => (
     {/* Thanks! */}
     <section data-background={Backgrounds.WhiteWithFooter}>
       <h1>Thank you<Emphasis>!</Emphasis></h1>
-      <h2 className={styles.subtitle}>Let's have a beer 🍻</h2>
+      <h2 className={styles.subtitle}>Happy coding 🤓</h2>
     </section>
   </Deck>
 );
