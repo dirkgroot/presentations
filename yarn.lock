@@ -270,9 +270,9 @@
     levn "^0.4.1"
 
 "@fontsource/poppins@^5.2.5":
-  version "5.2.5"
-  resolved "https://registry.yarnpkg.com/@fontsource/poppins/-/poppins-5.2.5.tgz#038958aa6945f12875d37bda8f442eff54a2d636"
-  integrity sha512-1S3k45pZOz2jqGPPqKw0in3uxFwnB+d5jSU8Tp9YwH/dIJptE3jdkQbYN0QD861GtuOpn6QhPW/yKt1w7hVRBQ==
+  version "5.2.6"
+  resolved "https://registry.yarnpkg.com/@fontsource/poppins/-/poppins-5.2.6.tgz#49a297bbec25419469dbb75f61788feac97cea63"
+  integrity sha512-NFr0121+vWCfzLDVvSZOzwAjRUaNj6QHA9gtUh/KHHoWf1Qn23EkwVFs63XZ6UtF5K1b3UNmCx77YEMGgV7BOQ==
 
 "@humanfs/core@^0.19.1":
   version "0.19.1"
