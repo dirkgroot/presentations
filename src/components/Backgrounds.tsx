@@ -1,32 +1,36 @@
 export enum Backgrounds {
-  DarkBlue =
-    "var(--avisi-color-dark-blue)",
+  FancyBackground =
+    "url('/assets/background.png') 0 0 / cover no-repeat",
   WhiteWithFooter =
-    "url('/assets/avisi_logo.png') 22.5px calc(100% - var(--avisi-logo-margin)) / auto var(--avisi-logo-height) no-repeat" +
+    "url('/assets/avisi_logo.png')" +
+    "  left calc(var(--avisi-footer-padding) * 2) bottom var(--avisi-logo-margin) / auto var(--avisi-logo-height)" +
+    "  no-repeat" +
+    "," +
+    "url('/assets/avisi_25_jaar_logo.png')" +
+    "  right calc(var(--avisi-footer-padding) * 2) bottom calc(var(--avisi-logo-margin) * 0.25) / auto calc(var(--avisi-logo-height) * 2)" +
+    "  no-repeat" +
     "," +
     "linear-gradient(" +
     "  to bottom," +
     "  var(--avisi-color-background) 0%," +
-    "  var(--avisi-color-background) calc(100% - var(--avisi-logo-height) - 0.1% - (var(--avisi-logo-margin) * 2))," +
-    "  var(--avisi-color-dark-blue) calc(100% - var(--avisi-logo-height) + 0.1% - (var(--avisi-logo-margin) * 2))," +
-    "  var(--avisi-color-dark-blue) 100%" +
-    ")",
-  RightHalfGrayWithFooter =
-    "url('/assets/avisi_logo.png') 22.5px calc(100% - var(--avisi-logo-margin)) / auto var(--avisi-logo-height) no-repeat" +
-    "," +
-    "linear-gradient(" +
-    "  to bottom," +
-    "  transparent 0%," +
-    "  transparent calc(100% - var(--avisi-logo-height) - 0.1% - (var(--avisi-logo-margin) * 2))," +
-    "  var(--avisi-color-dark-blue) calc(100% - var(--avisi-logo-height) + 0.1% - (var(--avisi-logo-margin) * 2))," +
-    "  var(--avisi-color-dark-blue) 100%" +
+    "  var(--avisi-color-background) calc(100% - var(--avisi-footer-height))," +
+    "  transparent calc(100% - var(--avisi-footer-height))," +
+    "  transparent 100%" +
     ")" +
+    "," +
+    "url('/assets/background.png') 0 0 / cover no-repeat",
+  RightHalfGrayWithFooter =
+    "url('/assets/avisi_logo.png')" +
+    "  left calc(var(--avisi-footer-padding) * 2) bottom var(--avisi-logo-margin) / auto var(--avisi-logo-height)" +
+    "  no-repeat" +
     "," +
     "linear-gradient(" +
     "  to right," +
     "  var(--avisi-color-background) 0%," +
-    "  var(--avisi-color-background) 49.9%," +
-    "  var(--avisi-color-light-gray) 50.1%," +
-    "  var(--avisi-color-light-gray) 100%" +
-    ")",
+    "  var(--avisi-color-background) 50%," +
+    "  var(--avisi-color-background) 50%," +
+    "  var(--avisi-color-background) 100%" +
+    ") top/100% calc(100% - var(--avisi-footer-height)) no-repeat" +
+    "," +
+    "url('/assets/background.png') 0 0 / cover no-repeat"
 }

@@ -45,6 +45,7 @@ $overlayElementFgColor: 240, 240, 240;
   --avisi-logo-height: #{settings.$avisiLogoHeight};
   --avisi-logo-margin: #{settings.$avisiLogoMargin};
   --avisi-footer-height: #{settings.$avisiFooterHeight};
+  --avisi-footer-padding: #{settings.$avisiFooterPadding};
   --avisi-color-background: #{settings.$avisiBackground};
   --avisi-color-dark-blue: #{settings.$avisiDarkBlue};
   --avisi-color-light-blue: #{settings.$avisiLightBlue};
@@ -64,7 +65,7 @@ $overlayElementFgColor: 240, 240, 240;
 
 .reveal .slide-number {
   background: transparent;
-  padding: 0 calc(#{settings.$footerPadding} * 2) 0 0;
+  padding: 0 calc(#{settings.$avisiFooterPadding} * 2) 0 0;
   bottom: 0;
   right: 0;
   height: settings.$avisiFooterHeight;

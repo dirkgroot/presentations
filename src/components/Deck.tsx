@@ -36,7 +36,7 @@ export const Deck = ({children, title, scroll}: DeckProps) => {
       transition: "fade",
       transitionSpeed: "fast",
       progress: false,
-      slideNumber: "c",
+      slideNumber: false,
       controls: false,
 
       pdfSeparateFragments: false,
