@@ -18,19 +18,15 @@ export enum Backgrounds {
     "  transparent 100%" +
     ")" +
     "," +
-    "url('/assets/background.png') 0 0 / cover no-repeat",
+    FancyBackground,
   RightHalfGrayWithFooter =
-    "url('/assets/avisi_logo.png')" +
-    "  left calc(var(--avisi-footer-padding) * 2) bottom var(--avisi-logo-margin) / auto var(--avisi-logo-height)" +
-    "  no-repeat" +
-    "," +
     "linear-gradient(" +
     "  to right," +
     "  var(--avisi-color-background) 0%," +
     "  var(--avisi-color-background) 50%," +
-    "  var(--avisi-color-background) 50%," +
-    "  var(--avisi-color-background) 100%" +
+    "  var(--avisi-color-light-gray) 50%," +
+    "  var(--avisi-color-light-gray) 100%" +
     ") top/100% calc(100% - var(--avisi-footer-height)) no-repeat" +
     "," +
-    "url('/assets/background.png') 0 0 / cover no-repeat"
+    WhiteWithFooter
 }
