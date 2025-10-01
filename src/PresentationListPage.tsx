@@ -35,6 +35,16 @@ export const PresentationListPage = () => (
           <td><Link to="/designing-with-types-java" target="_blank">open</Link></td>
           <td><Link to="/designing-with-types-java/scroll" target="_blank">open</Link></td>
         </tr>
+        <tr>
+          <th>Getting better, against all odds</th>
+          <td>
+            Getting better is not always as easy as it seems. Team and organisation dynamics can make it really hard to
+            make the improvements we need. In this interactive talk we use a case study to identify essential qualities
+            we need to get better as a team.
+          </td>
+          <td><Link to="/getting-better-against-all-odds" target="_blank">open</Link></td>
+          <td><Link to="/getting-better-against-all-odds/scroll" target="_blank">open</Link></td>
+        </tr>
         </tbody>
       </table>
     </div>

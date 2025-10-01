@@ -32,6 +32,7 @@ export const Deck = ({children, title, scroll}: DeckProps) => {
       height: 1280,
 
       view: scroll ? "scroll" : undefined,
+      backgroundTransition: "none",
       controlsLayout: "edges",
       transition: "fade",
       transitionSpeed: "fast",

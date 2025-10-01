@@ -7,6 +7,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {DesigningWithTypesKotlin} from "./presentations/DesigningWithTypesKotlin.tsx";
 import {PresentationListPage} from "./PresentationListPage.tsx";
 import {DesigningWithTypesJava} from "./presentations/DesigningWithTypesJava.tsx";
+import {GettingBetterAgainstAllOdds} from "./presentations/GettingBetterAgainstAllOdds.tsx";
 
 createRoot(document.body).render(
   <BrowserRouter>
@@ -16,6 +17,8 @@ createRoot(document.body).render(
       <Route path="/designing-with-types/scroll" element={<DesigningWithTypesKotlin scroll/>}/>
       <Route path="/designing-with-types-java" element={<DesigningWithTypesJava/>}/>
       <Route path="/designing-with-types-java/scroll" element={<DesigningWithTypesJava scroll/>}/>
+      <Route path="/getting-better-against-all-odds" element={<GettingBetterAgainstAllOdds/>}/>
+      <Route path="/getting-better-against-all-odds/scroll" element={<GettingBetterAgainstAllOdds scroll/>}/>
     </Routes>
   </BrowserRouter>,
 );
