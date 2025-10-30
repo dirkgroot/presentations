@@ -36,7 +36,15 @@ export const FpOopBestFriendsForever = ({scroll}: PresentationProps) => (
     {/* So what? */}
     <section data-background={Backgrounds.WhiteWithFooter}>
       <h1 className={styles.title}>So what<Emphasis>?</Emphasis></h1>
-      <h2 className={`${styles.subtitle} fragment`}>Let's do some FP in an OOP language<br/>and see what happens!</h2>
+      <h2 className={`${styles.subtitle} fragment`}>Let's refactor some FP into an OOP program<br/>
+        and see what happens<Emphasis>!</Emphasis>
+      </h2>
+      <h3 className={`${styles.subtitle} fragment`}>Goals<Emphasis>:</Emphasis></h3>
+      <ul>
+        <li className={"fragment"}>Prefer immutability</li>
+        <li className={"fragment"}>Treat functions as first-class citizens</li>
+        <li className={"fragment"}>Minimize exception handling</li>
+      </ul>
     </section>
 
     {/* Conclusion */}
