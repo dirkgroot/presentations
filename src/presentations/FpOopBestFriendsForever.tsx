@@ -28,7 +28,7 @@ export const FpOopBestFriendsForever = ({scroll}: PresentationProps) => (
       <h2 className={styles.subtitle}>FP has become mainstream</h2>
       <ul>
         <li className={"fragment"}>FP languages on the JVM: Scala, Clojure</li>
-        <li className={"fragment"}>FP features are being adopted by existing OOP languages (Java, C#)</li>
+        <li className={"fragment"}>FP features are being adopted by existing OOP languages (Java, C#, C++)</li>
         <li className={"fragment"}>FP features are built into new languages (Kotlin, Rust)</li>
       </ul>
     </section>
