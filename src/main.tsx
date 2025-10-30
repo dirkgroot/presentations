@@ -8,6 +8,7 @@ import {DesigningWithTypesKotlin} from "./presentations/DesigningWithTypesKotlin
 import {PresentationListPage} from "./PresentationListPage.tsx";
 import {DesigningWithTypesJava} from "./presentations/DesigningWithTypesJava.tsx";
 import {GettingBetterAgainstAllOdds} from "./presentations/GettingBetterAgainstAllOdds.tsx";
+import {FpOopBestFriendsForever} from "./presentations/FpOopBestFriendsForever.tsx";
 
 createRoot(document.body).render(
   <BrowserRouter>
@@ -17,6 +18,7 @@ createRoot(document.body).render(
       <Route path="/designing-with-types/scroll" element={<DesigningWithTypesKotlin scroll/>}/>
       <Route path="/designing-with-types-java" element={<DesigningWithTypesJava/>}/>
       <Route path="/designing-with-types-java/scroll" element={<DesigningWithTypesJava scroll/>}/>
+      <Route path="/fp-oop-bffs" element={<FpOopBestFriendsForever/>}/>
       <Route path="/getting-better-against-all-odds" element={<GettingBetterAgainstAllOdds/>}/>
       <Route path="/getting-better-against-all-odds/scroll" element={<GettingBetterAgainstAllOdds scroll/>}/>
     </Routes>

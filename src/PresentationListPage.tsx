@@ -36,6 +36,20 @@ export const PresentationListPage = () => (
           <td><Link to="/designing-with-types-java/scroll" target="_blank">open</Link></td>
         </tr>
         <tr>
+          <th>FP and OOP: Best Friends Forever?</th>
+          <td>
+            Modern programming languages are increasingly becoming a mix of multiple paradigms. Object-Oriented
+            Programming languages (OOP) like Java and Kotlin, for example, are being further extended with concepts from
+            Functional Programming languages (FP). Think of immutability and lambda expressions. What happens when we
+            combine both programming styles in a single codebase? Can OOP and FP complement each other?
+            <br/><br/>
+            In this talk, we'll explore what happens when we introduce FP patterns in OOP code. Perhaps it will turn out
+            that OOP and FP are indeed BFFs!
+          </td>
+          <td><Link to="/fp-oop-bffs" target="_blank">open</Link></td>
+          <td><Link to="/fp-oop-bffs/scroll" target="_blank">open</Link></td>
+        </tr>
+        <tr>
           <th>Getting better, against all odds</th>
           <td>
             Getting better is not always as easy as it seems. Team and organisation dynamics can make it really hard to
