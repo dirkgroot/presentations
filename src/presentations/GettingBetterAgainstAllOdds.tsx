@@ -29,7 +29,7 @@ export const GettingBetterAgainstAllOdds = ({scroll}: PresentationProps) => (
         <li className={"fragment"}>Cynical: <em>"Why do this, here's 10 other things we can do"</em></li>
         <li className={"fragment"}>Enthusiastic: <em>"Let's go!"</em></li>
         <li className={"fragment"}>Constructive: <em>"How can we make this happen?"</em></li>
-      </ul>
+       </ul>
     </section>
     <section data-background={Backgrounds.WhiteWithFooter}>
       <h1>Scope</h1>

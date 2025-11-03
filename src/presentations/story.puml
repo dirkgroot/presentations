@@ -1,0 +1,37 @@
+@startuml
+
+!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+skinparam {
+  BackgroundColor transparent
+}
+
+Person(notaris, "Notaris", "Notaris of notarieel medewerker")
+System(brp, "Basisregistratie Personen", "Persoonsgegevens opvragen bij GBA-V")
+System(billing, "Billing", "Verzamelt en verwerkt facturatiegegevens")
+
+System_Boundary(messageBroker, "Message broker") {
+  Container(artemis, "Artemis", "Artemis ActiveMQ", "Message queueing software")
+'  ContainerDb(database, "Database", "PostgreSQL")
+
+'  Rel_R(artemis, database, "Slaat berichten op in")
+}
+
+Rel(notaris, brp, "Controleert persoonsgegevens met behulp van")
+Rel_U(brp, artemis, "Stuurt facturatiegegevens naar")
+Rel_D(artemis, billing, "Stuurt facturatiegegevens door naar")
+
+ContainerDb(brpDatabase, "BRP Database", "PostgreSQL")
+ContainerDb(billingDatabase, "Billing Database", "PostgreSQL")
+
+Rel_D(brp, brpDatabase, "Slaat verzonden berichten op in")
+Rel_D(billing, billingDatabase, "Slaat verwerkte berichten op in")
+
+System(pmbBeheer, "Beheer", "Beheert instellingen en status van applicaties")
+
+Rel_U(pmbBeheer, brpDatabase, "Leest verzonden berichten uit")
+Rel_U(pmbBeheer, billingDatabase, "Leest verwerkte berichten uit")
+
+'SHOW_LEGEND()
+
+@enduml
