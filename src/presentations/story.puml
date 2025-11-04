@@ -2,10 +2,6 @@
 
 !include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
-skinparam {
-  BackgroundColor transparent
-}
-
 Person(notaris, "Notaris", "Notaris of notarieel medewerker")
 System(brp, "Basisregistratie Personen", "Persoonsgegevens opvragen bij GBA-V")
 System(billing, "Billing", "Verzamelt en verwerkt facturatiegegevens")

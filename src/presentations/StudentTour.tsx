@@ -50,12 +50,12 @@ export const StudentTour = () => (
     <AutoAnimate>
       <section data-background={Backgrounds.WhiteWithFooter}>
         <h1 className={styles.title}>Story time!</h1>
-        <img src={story_1} alt={"Diagram"}/>
+        <img src={story_1} alt={"Diagram"} data-preview-image={story_1}/>
       </section>
 
       <section data-background={Backgrounds.WhiteWithFooter}>
         <h1 className={styles.title}>Story time!</h1>
-        <img src={story_2} alt={"Diagram"}/>
+        <img src={story_2} alt={"Diagram"} data-preview-image={story_2}/>
       </section>
     </AutoAnimate>
 
