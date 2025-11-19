@@ -61,8 +61,8 @@ export const PresentationListPage = () => (
             Aggregates, Entities, Value Objects, and how they fit into a software architecture. We do this by applying
             it to a practical example, so that you can see how these concepts fit into practice.
           </td>
-          <td><Link to="/deep-dive-domain-driven-design" target="_blank">open</Link></td>
-          <td><Link to="/deep-dive-domain-driven-design/scroll" target="_blank">open</Link></td>
+          <td><Link to="/deep-dive-ddd" target="_blank">open</Link></td>
+          <td><Link to="/deep-dive-ddd/scroll" target="_blank">open</Link></td>
         </tr>
         <tr>
           <th>Getting better, against all odds</th>
