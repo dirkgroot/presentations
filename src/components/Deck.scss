@@ -95,3 +95,7 @@ $overlayElementFgColor: 240, 240, 240;
 .reveal li::marker {
   color: settings.$avisiLightBlue;
 }
+
+.reveal li {
+  padding-top: 20px;
+}

@@ -4,7 +4,7 @@ import {Emphasis} from "../components/Emphasis.tsx";
 export const WhoAmISlide = () => (
   <section data-background={Backgrounds.WhiteWithFooter}>
     <h1><code><Emphasis>$</Emphasis> whoami<Emphasis>_</Emphasis></code></h1>
-    <ul>
+    <ul style={{listStyleType: "none"}}>
       <li><Emphasis><b>Name</b></Emphasis> Dirk Groot</li>
       <li><Emphasis><b>Born in</b></Emphasis> 1977<Emphasis><sup>*</sup></Emphasis></li>
       <li><Emphasis><b>Lives in</b></Emphasis> Arnhem, The Netherlands</li>

@@ -9,7 +9,8 @@ import {PresentationListPage} from "./PresentationListPage.tsx";
 import {DesigningWithTypesJava} from "./presentations/DesigningWithTypesJava.tsx";
 import {GettingBetterAgainstAllOdds} from "./presentations/GettingBetterAgainstAllOdds.tsx";
 import {FpOopBestFriendsForever} from "./presentations/FpOopBestFriendsForever.tsx";
-import {StudentTour} from "./presentations/StudentTour.tsx";
+import {StudentTour} from "./presentations/StudentTour/StudentTour.tsx";
+import {DeepDiveDomainDrivenDesign} from "./presentations/DeepDiveDomainDrivenDesign/DeepDiveDomainDrivenDesign.tsx";
 
 createRoot(document.body).render(
   <BrowserRouter>
@@ -22,6 +23,8 @@ createRoot(document.body).render(
       <Route path="/fp-oop-bffs" element={<FpOopBestFriendsForever/>}/>
       <Route path="/getting-better-against-all-odds" element={<GettingBetterAgainstAllOdds/>}/>
       <Route path="/getting-better-against-all-odds/scroll" element={<GettingBetterAgainstAllOdds scroll/>}/>
+      <Route path="/deep-dive-ddd" element={<DeepDiveDomainDrivenDesign/>}/>
+      <Route path="/deep-dive-ddd/scroll" element={<DeepDiveDomainDrivenDesign scroll/>}/>
       <Route path="/student-tour" element={<StudentTour/>}/>
     </Routes>
   </BrowserRouter>,

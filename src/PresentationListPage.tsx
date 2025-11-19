@@ -50,6 +50,21 @@ export const PresentationListPage = () => (
           <td><Link to="/fp-oop-bffs/scroll" target="_blank">open</Link></td>
         </tr>
         <tr>
+          <th>Deep Dive: Domain-Driven Design</th>
+          <td>
+            How do I name this entity? How do I deal with ambiguous terms? Where do I implement business rules? Is this
+            validation part of the business logic, or does it belong to the application logic? Which entities need to be
+            in scope for this database transaction?
+            <br/><br/>
+            In this deep dive, we explore the concepts of Domain-Driven Design (DDD) and how they can help you to answer
+            these kinds of questions. We cover all DDD concepts, including Ubiquitous Language and Bounded Context,
+            Aggregates, Entities, Value Objects, and how they fit into a software architecture. We do this by applying
+            it to a practical example, so that you can see how these concepts fit into practice.
+          </td>
+          <td><Link to="/deep-dive-domain-driven-design" target="_blank">open</Link></td>
+          <td><Link to="/deep-dive-domain-driven-design/scroll" target="_blank">open</Link></td>
+        </tr>
+        <tr>
           <th>Getting better, against all odds</th>
           <td>
             Getting better is not always as easy as it seems. Team and organisation dynamics can make it really hard to

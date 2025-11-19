@@ -1,12 +1,12 @@
-import {Deck} from "../components/Deck.tsx";
-import {WhoAmISlide} from "../slides/WhoAmISlide.tsx";
-import {Avisi25JaarSlide} from "../slides/Avisi25JaarSlide.tsx";
-import {Backgrounds} from "../components/Backgrounds.tsx";
-import {AutoAnimate} from "../components/AutoAnimate.tsx";
-import styles from "./Presentation.module.scss";
+import {Deck} from "../../components/Deck.tsx";
+import {WhoAmISlide} from "../../slides/WhoAmISlide.tsx";
+import {Avisi25JaarSlide} from "../../slides/Avisi25JaarSlide.tsx";
+import {Backgrounds} from "../../components/Backgrounds.tsx";
+import {AutoAnimate} from "../../components/AutoAnimate.tsx";
+import styles from "../Presentation.module.scss";
 import story_1 from "./story_1.svg";
 import story_2 from "./story_2.svg";
-import {Emphasis} from "../components/Emphasis.tsx";
+import {Emphasis} from "../../components/Emphasis.tsx";
 
 export const StudentTour = () => (
   <Deck title={"Student Tour"}>
