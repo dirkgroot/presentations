@@ -322,9 +322,9 @@
     mlly "^1.7.4"
 
 "@lightenna/react-mermaid-diagram@^1.0.17":
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/@lightenna/react-mermaid-diagram/-/react-mermaid-diagram-1.0.21.tgz#4ed65933bda3aa76434398776855d9a4b5a9213d"
-  integrity sha512-9LqjH5nwvm0w0hYGwZR56KpxXieSNhZm0SoVRBC4ZMLyRtrxYvOk+sc/rbmQ/jYluIQGdjOeCio7HlBHowvh6Q==
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/@lightenna/react-mermaid-diagram/-/react-mermaid-diagram-1.0.22.tgz#f432ffa826f02b8f389cab672c4581fe301ed751"
+  integrity sha512-rEZpBwCuQo0tuHIW+vGeYfNW/NftzSB80+cNNLQSfZmln3U9AQHV0wVH4VlNA9ADg+EmAyrik/4UR5++UAmhSA==
 
 "@mermaid-js/parser@^0.6.3":
   version "0.6.3"
