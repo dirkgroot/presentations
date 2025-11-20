@@ -504,14 +504,14 @@ export const DeepDiveDomainDrivenDesign = ({scroll}: PresentationProps) => (
       <ul style={{listStyleType: "none"}}>
         <li>
           <b>Slides</b>&nbsp;
-          <a href={"https://presentations.dirkgroot.nl/deep-dive-ddd"}>
+          <a href={"https://presentations.dirkgroot.nl/deep-dive-ddd"} target={"_blank"}>
             https://presentations.dirkgroot.nl/deep-dive-ddd
           </a><br/>
           <img src={presentatlion_link_qr} alt={"Presentation link QR code"} width="300px" height="300px"/>
         </li>
         <li>
           <b>Example code</b>&nbsp;
-          <a href={"https://github.com/dirkgroot/deep-dive-ddd"}>
+          <a href={"https://github.com/dirkgroot/deep-dive-ddd"} target={"_blank"}>
             https://github.com/dirkgroot/deep-dive-ddd
           </a><br/>
           <img src={gitlab_link_qr} alt={"GitLab link QR code"} width="300px" height="300px"/>
