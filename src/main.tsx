@@ -21,6 +21,7 @@ createRoot(document.body).render(
       <Route path="/designing-with-types-java" element={<DesigningWithTypesJava/>}/>
       <Route path="/designing-with-types-java/scroll" element={<DesigningWithTypesJava scroll/>}/>
       <Route path="/fp-oop-bffs" element={<FpOopBestFriendsForever/>}/>
+      <Route path="/fp-oop-bffs/scroll" element={<FpOopBestFriendsForever scroll/>}/>
       <Route path="/getting-better-against-all-odds" element={<GettingBetterAgainstAllOdds/>}/>
       <Route path="/getting-better-against-all-odds/scroll" element={<GettingBetterAgainstAllOdds scroll/>}/>
       <Route path="/deep-dive-ddd" element={<DeepDiveDomainDrivenDesign/>}/>
