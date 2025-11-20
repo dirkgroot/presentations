@@ -511,8 +511,8 @@ export const DeepDiveDomainDrivenDesign = ({scroll}: PresentationProps) => (
         </li>
         <li>
           <b>Example code</b>&nbsp;
-          <a href={"https://gitlab.com/dirk.groot/deep-dive-ddd"}>
-            https://gitlab.com/dirk.groot/deep-dive-ddd
+          <a href={"https://github.com/dirkgroot/deep-dive-ddd"}>
+            https://github.com/dirkgroot/deep-dive-ddd
           </a><br/>
           <img src={gitlab_link_qr} alt={"GitLab link QR code"} width="300px" height="300px"/>
         </li>
