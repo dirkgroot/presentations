@@ -1,7 +1,7 @@
-name: Build the site and publish it to GitHub Pages
+name: Build the site
 
 on:
-  push:
+  pull_request:
     branches: [ "main" ]
 
 jobs:
@@ -21,10 +21,3 @@ jobs:
           cache: 'npm'
       - run: yarn install
       - run: yarn build
-
-      - name: Upload example site as GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: ./dist
-      - name: Deploy GitHub Pages site
-        uses: actions/deploy-pages@v4.0.5
