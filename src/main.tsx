@@ -8,7 +8,7 @@ import {DesigningWithTypesKotlin} from "./presentations/DesigningWithTypesKotlin
 import {PresentationListPage} from "./PresentationListPage.tsx";
 import {DesigningWithTypesJava} from "./presentations/DesigningWithTypesJava.tsx";
 import {GettingBetterAgainstAllOdds} from "./presentations/GettingBetterAgainstAllOdds.tsx";
-import {FpOopBestFriendsForever} from "./presentations/FpOopBestFriendsForever.tsx";
+import {FpOopBestFriendsForever} from "./presentations/FpOOpBestFriendsForever/FpOopBestFriendsForever.tsx";
 import {StudentTour} from "./presentations/StudentTour/StudentTour.tsx";
 import {DeepDiveDomainDrivenDesign} from "./presentations/DeepDiveDomainDrivenDesign/DeepDiveDomainDrivenDesign.tsx";
 

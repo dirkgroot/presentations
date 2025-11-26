@@ -1,11 +1,13 @@
-import {Deck} from "../components/Deck.tsx";
-import {PresentationProps} from "./PresentationProps.tsx";
-import {Avisi25JaarSlide} from "../slides/Avisi25JaarSlide.tsx";
-import {WhoAmISlide} from "../slides/WhoAmISlide.tsx";
-import {Backgrounds} from "../components/Backgrounds.tsx";
-import styles from "./Presentation.module.scss";
-import {Emphasis} from "../components/Emphasis.tsx";
-import {Column, ColumnLayout} from "../components/ColumnLayout.tsx";
+import {Deck} from "../../components/Deck.tsx";
+import {PresentationProps} from "../PresentationProps.tsx";
+import {Avisi25JaarSlide} from "../../slides/Avisi25JaarSlide.tsx";
+import {WhoAmISlide} from "../../slides/WhoAmISlide.tsx";
+import {Backgrounds} from "../../components/Backgrounds.tsx";
+import styles from "../Presentation.module.scss";
+import {Emphasis} from "../../components/Emphasis.tsx";
+import {Column, ColumnLayout} from "../../components/ColumnLayout.tsx";
+import slides_qr from "./slides_qr.png";
+import code_qr from "./code_qr.png";
 
 export const FpOopBestFriendsForever = ({scroll}: PresentationProps) => (
   <Deck title={"Designing with types"} scroll={scroll}>
@@ -47,6 +49,25 @@ export const FpOopBestFriendsForever = ({scroll}: PresentationProps) => (
       </ul>
     </section>
 
+    {/* Summary */}
+    <section data-background={Backgrounds.WhiteWithFooter}>
+      <h1 className={styles.title}>Summary<Emphasis>.</Emphasis></h1>
+      <ul>
+        <li className={"fragment"}>Starting point: An piece of OO/procedural code</li>
+        <li className={"fragment"}>
+          Introduced FP techniques and patterns
+          <ul>
+            <li>Algebraic datatype: <Emphasis><code>Status</code></Emphasis></li>
+            <li>Functor: <Emphasis><code>map</code></Emphasis></li>
+            <li>Monad: <Emphasis><code>flatMap</code></Emphasis></li>
+            <li>Currying: <Emphasis><code>(ProductName) -&gt; (Quantity) -&gt; ShoppingCartItem</code></Emphasis></li>
+            <li>Applicative functor: <Emphasis><code>apply</code></Emphasis></li>
+          </ul>
+        </li>
+        <li className={"fragment"}><Emphasis>Bonus</Emphasis>: We solved input validation, once and for all! 🥳</li>
+      </ul>
+    </section>
+
     {/* Conclusion */}
     <section data-background={Backgrounds.WhiteWithFooter}>
       <h1 className={styles.title}>OOP and FP: BFFs<Emphasis>?</Emphasis></h1>
@@ -81,7 +102,22 @@ export const FpOopBestFriendsForever = ({scroll}: PresentationProps) => (
     {/* Thanks! */}
     <section data-background={Backgrounds.WhiteWithFooter}>
       <h1>Thank you<Emphasis>!</Emphasis></h1>
-      <h2 className={styles.subtitle}>Happy coding 🤓</h2>
+      <ul style={{listStyleType: "none"}}>
+        <li>
+          <b>Slides</b>&nbsp;
+          <a href={"https://presentations.dirkgroot.nl/fp-oop-bffs"} target={"_blank"}>
+            https://presentations.dirkgroot.nl/fp-oop-bffs
+          </a><br/>
+          <img src={slides_qr} alt={"Presentation link QR code"} width="300px" height="300px"/>
+        </li>
+        <li>
+          <b>Example code</b>&nbsp;
+          <a href={"https://github.com/dirkgroot/fp-oop-bffs"} target={"_blank"}>
+            https://github.com/dirkgroot/fp-oop-bffs
+          </a><br/>
+          <img src={code_qr} alt={"Code link QR code"} width="300px" height="300px"/>
+        </li>
+      </ul>
     </section>
   </Deck>
 );
