@@ -53,7 +53,7 @@ export const FpOopBestFriendsForever = ({scroll}: PresentationProps) => (
     <section data-background={Backgrounds.WhiteWithFooter}>
       <h1 className={styles.title}>Summary<Emphasis>.</Emphasis></h1>
       <ul>
-        <li className={"fragment"}>Starting point: An piece of OO/procedural code</li>
+        <li className={"fragment"}>Starting point: A piece of OO/procedural code</li>
         <li className={"fragment"}>
           Introduced FP techniques and patterns
           <ul>
