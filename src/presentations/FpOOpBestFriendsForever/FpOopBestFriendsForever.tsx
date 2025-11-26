@@ -8,6 +8,7 @@ import {Emphasis} from "../../components/Emphasis.tsx";
 import {Column, ColumnLayout} from "../../components/ColumnLayout.tsx";
 import slides_qr from "./slides_qr.png";
 import code_qr from "./code_qr.png";
+import {AboutAvisiSlide} from "../../slides/AboutAvisiSlide.tsx";
 
 export const FpOopBestFriendsForever = ({scroll}: PresentationProps) => (
   <Deck title={"FP and OOP: BFFs?"} scroll={scroll}>
@@ -16,6 +17,9 @@ export const FpOopBestFriendsForever = ({scroll}: PresentationProps) => (
 
     {/* Who am I? */}
     <WhoAmISlide/>
+
+    {/* About Avisi */}
+    <AboutAvisiSlide/>
 
     {/* Title */}
     <section data-background={Backgrounds.WhiteWithFooter}>
