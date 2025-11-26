@@ -10,7 +10,7 @@ import slides_qr from "./slides_qr.png";
 import code_qr from "./code_qr.png";
 
 export const FpOopBestFriendsForever = ({scroll}: PresentationProps) => (
-  <Deck title={"Designing with types"} scroll={scroll}>
+  <Deck title={"FP and OOP: BFFs?"} scroll={scroll}>
     {/* Avisi logo(s) */}
     <Avisi25JaarSlide/>
 
