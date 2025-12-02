@@ -1093,9 +1093,9 @@
     csstype "^3.2.2"
 
 "@types/reveal.js@^5.0.5":
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/@types/reveal.js/-/reveal.js-5.2.1.tgz#7afc276c437f1e3346e518e0a8d0b53e8a25e716"
-  integrity sha512-egr+amW5iilXo94kEGyJv24bJozsu/XAOHnhMHLnaJkHVxoui2gsWqzByaltA5zfXDTH2F4WyWnAkhHRcpytIQ==
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/@types/reveal.js/-/reveal.js-5.2.2.tgz#fc30c311191df04c29e202a187af3694b9357d8d"
+  integrity sha512-U6wdIeFZPR77zjaZCrFNPzKjjfdFr4Dj0WUAZ+UYgXGjwqYCnjpCngeS0hb+28FLL0QzE9jXBikvB7xxAQi5sg==
 
 "@types/trusted-types@^2.0.7":
   version "2.0.7"
