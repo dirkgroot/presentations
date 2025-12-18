@@ -11,6 +11,7 @@ import {GettingBetterAgainstAllOdds} from "./presentations/GettingBetterAgainstA
 import {FpOopBestFriendsForever} from "./presentations/FpOOpBestFriendsForever/FpOopBestFriendsForever.tsx";
 import {StudentTour} from "./presentations/StudentTour/StudentTour.tsx";
 import {DeepDiveDomainDrivenDesign} from "./presentations/DeepDiveDomainDrivenDesign/DeepDiveDomainDrivenDesign.tsx";
+import {AoC2025} from "./presentations/AoC2025/AoC2025.tsx";
 
 createRoot(document.body).render(
   <BrowserRouter>
@@ -27,6 +28,7 @@ createRoot(document.body).render(
       <Route path="/deep-dive-ddd" element={<DeepDiveDomainDrivenDesign/>}/>
       <Route path="/deep-dive-ddd/scroll" element={<DeepDiveDomainDrivenDesign scroll/>}/>
       <Route path="/student-tour" element={<StudentTour/>}/>
+      <Route path="/aoc-2025" element={<AoC2025/>}/>
     </Routes>
   </BrowserRouter>,
 );
