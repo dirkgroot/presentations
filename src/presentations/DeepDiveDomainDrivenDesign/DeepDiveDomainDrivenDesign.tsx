@@ -180,32 +180,6 @@ export const DeepDiveDomainDrivenDesign = ({scroll}: PresentationProps) => (
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1 className={styles.title}>DDD<Emphasis>/</Emphasis>Diving Deeper</h1>
           <h2 className={styles.subtitle}>Aggregate<Emphasis>.</Emphasis></h2>
-          <ul>
-            <li className={"fragment"}>Models a concept from the Ubiquitous Language</li>
-            <li className={"fragment"}>
-              Clusters one or more <Emphasis>Entities</Emphasis> and/or <Emphasis>Value Objects</Emphasis>
-            </li>
-            <li className={"fragment"}>
-              Represents a <Emphasis>Consistency Boundary</Emphasis>
-              <ul>
-                <li>All state within an Aggregate <Emphasis>must</Emphasis> be consistent at all times</li>
-                <li>We're referring to <Emphasis>transactional consistency</Emphasis>, not <em>eventual consistency</em>
-                </li>
-              </ul>
-            </li>
-            <li className={"fragment"}>
-              The <Emphasis>Aggregate Root</Emphasis> maintains consistency
-              <ul>
-                <li>This is an <Emphasis>Entity</Emphasis></li>
-                <li>All changes to the aggregate are made through the Aggregate Root</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-
-        <section data-background={Backgrounds.WhiteWithFooter}>
-          <h1 className={styles.title}>DDD<Emphasis>/</Emphasis>Diving Deeper</h1>
-          <h2 className={styles.subtitle}>Aggregate<Emphasis>.</Emphasis></h2>
           <MermaidDiagram id={"domainmodel"} data-id={"domainmodel-diagram"}>
             {
               // language=Mermaid
@@ -265,6 +239,32 @@ export const DeepDiveDomainDrivenDesign = ({scroll}: PresentationProps) => (
                 style Username fill: lightgreen
               `}
           </MermaidDiagram>
+        </section>
+
+        <section data-background={Backgrounds.WhiteWithFooter}>
+          <h1 className={styles.title}>DDD<Emphasis>/</Emphasis>Diving Deeper</h1>
+          <h2 className={styles.subtitle}>Aggregate<Emphasis>.</Emphasis></h2>
+          <ul>
+            <li className={"fragment"}>Models a concept from the Ubiquitous Language</li>
+            <li className={"fragment"}>
+              Clusters one or more <Emphasis>Entities</Emphasis> and/or <Emphasis>Value Objects</Emphasis>
+            </li>
+            <li className={"fragment"}>
+              Represents a <Emphasis>Consistency Boundary</Emphasis>
+              <ul>
+                <li>All state within an Aggregate <Emphasis>must</Emphasis> be consistent at all times</li>
+                <li>We're referring to <Emphasis>transactional consistency</Emphasis>, not <em>eventual consistency</em>
+                </li>
+              </ul>
+            </li>
+            <li className={"fragment"}>
+              The <Emphasis>Aggregate Root</Emphasis> maintains consistency
+              <ul>
+                <li>This is an <Emphasis>Entity</Emphasis></li>
+                <li>All changes to the aggregate are made through the Aggregate Root</li>
+              </ul>
+            </li>
+          </ul>
         </section>
 
         <section data-background={Backgrounds.WhiteWithFooter}>
