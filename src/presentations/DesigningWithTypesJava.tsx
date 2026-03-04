@@ -4,7 +4,7 @@ import {Emphasis} from "../components/Emphasis.tsx";
 import {MermaidDiagram} from "@lightenna/react-mermaid-diagram";
 import {Backgrounds} from "../components/Backgrounds.tsx";
 import {Column, ColumnLayout} from "../components/ColumnLayout.tsx";
-import {Avisi25JaarSlide} from "../slides/Avisi25JaarSlide.tsx";
+import {AvisiLogoSlide} from "../slides/AvisiLogoSlide.tsx";
 import {AutoAnimate} from "../components/AutoAnimate.tsx";
 import {Code} from "../components/Code.tsx";
 import {PresentationProps} from "./PresentationProps.tsx";
@@ -28,7 +28,7 @@ const developerWorkflowDiagramWithRedLinks3 = developerWorkflowDiagram + "    li
 export const DesigningWithTypesJava = ({scroll}: PresentationProps) => (
   <Deck title={"Designing with types"} scroll={scroll}>
     {/* Avisi logo(s) */}
-    <Avisi25JaarSlide/>
+    <AvisiLogoSlide/>
 
     {/* Who am I? */}
     <WhoAmISlide/>

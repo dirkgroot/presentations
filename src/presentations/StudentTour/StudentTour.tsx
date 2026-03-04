@@ -1,6 +1,6 @@
 import {Deck} from "../../components/Deck.tsx";
 import {WhoAmISlide} from "../../slides/WhoAmISlide.tsx";
-import {Avisi25JaarSlide} from "../../slides/Avisi25JaarSlide.tsx";
+import {AvisiLogoSlide} from "../../slides/AvisiLogoSlide.tsx";
 import {Backgrounds} from "../../components/Backgrounds.tsx";
 import {AutoAnimate} from "../../components/AutoAnimate.tsx";
 import styles from "../Presentation.module.scss";
@@ -11,7 +11,7 @@ import {Emphasis} from "../../components/Emphasis.tsx";
 export const StudentTour = () => (
   <Deck title={"Student Tour"}>
     {/* Avisi logo(s) */}
-    <Avisi25JaarSlide/>
+    <AvisiLogoSlide/>
 
     {/* Who am I? */}
     <WhoAmISlide/>

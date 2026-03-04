@@ -1,6 +1,6 @@
 import {PresentationProps} from "../PresentationProps.tsx";
 import {Deck} from "../../components/Deck.tsx";
-import {Avisi25JaarSlide} from "../../slides/Avisi25JaarSlide.tsx";
+import {AvisiLogoSlide} from "../../slides/AvisiLogoSlide.tsx";
 import {WhoAmISlide} from "../../slides/WhoAmISlide.tsx";
 import {Backgrounds} from "../../components/Backgrounds.tsx";
 import styles from "../Presentation.module.scss";
@@ -20,7 +20,7 @@ import {Column, ColumnLayout} from "../../components/ColumnLayout.tsx";
 export const DeepDiveDomainDrivenDesign = ({scroll}: PresentationProps) => (
   <Deck title={"Deep Dive Domain-Driven Design"} scroll={scroll}>
     {/* Avisi logo(s) */}
-    <Avisi25JaarSlide/>
+    <AvisiLogoSlide/>
 
     {/* TITLE */}
     <section>

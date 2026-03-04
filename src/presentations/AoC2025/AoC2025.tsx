@@ -1,5 +1,5 @@
 import {Deck} from "../../components/Deck.tsx";
-import {Avisi25JaarSlide} from "../../slides/Avisi25JaarSlide.tsx";
+import {AvisiLogoSlide} from "../../slides/AvisiLogoSlide.tsx";
 import {Backgrounds} from "../../components/Backgrounds.tsx";
 import styles from "../Presentation.module.scss";
 import {Emphasis} from "../../components/Emphasis.tsx";
@@ -8,7 +8,7 @@ import {Column, ColumnLayout} from "../../components/ColumnLayout.tsx";
 export const AoC2025 = () => (
   <Deck title={"Advent of Code 2025"}>
     {/* Avisi logo(s) */}
-    <Avisi25JaarSlide/>
+    <AvisiLogoSlide/>
 
     <section data-background={Backgrounds.WhiteWithFooter}>
       <h1 className={styles.title}>Veelgebruikte technieken<Emphasis>.</Emphasis></h1>

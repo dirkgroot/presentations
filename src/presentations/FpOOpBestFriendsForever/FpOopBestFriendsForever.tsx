@@ -1,6 +1,6 @@
 import {Deck} from "../../components/Deck.tsx";
 import {PresentationProps} from "../PresentationProps.tsx";
-import {Avisi25JaarSlide} from "../../slides/Avisi25JaarSlide.tsx";
+import {AvisiLogoSlide} from "../../slides/AvisiLogoSlide.tsx";
 import {WhoAmISlide} from "../../slides/WhoAmISlide.tsx";
 import {Backgrounds} from "../../components/Backgrounds.tsx";
 import styles from "../Presentation.module.scss";
@@ -13,7 +13,7 @@ import {AboutAvisiSlide} from "../../slides/AboutAvisiSlide.tsx";
 export const FpOopBestFriendsForever = ({scroll}: PresentationProps) => (
   <Deck title={"FP and OOP: BFFs?"} scroll={scroll}>
     {/* Avisi logo(s) */}
-    <Avisi25JaarSlide/>
+    <AvisiLogoSlide/>
 
     {/* Who am I? */}
     <WhoAmISlide/>

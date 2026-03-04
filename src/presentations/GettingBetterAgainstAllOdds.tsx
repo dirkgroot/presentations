@@ -1,6 +1,6 @@
 import {PresentationProps} from "./PresentationProps.tsx";
 import {Deck} from "../components/Deck.tsx";
-import {Avisi25JaarSlide} from "../slides/Avisi25JaarSlide.tsx";
+import {AvisiLogoSlide} from "../slides/AvisiLogoSlide.tsx";
 import {WhoAmISlide} from "../slides/WhoAmISlide.tsx";
 import {Backgrounds} from "../components/Backgrounds.tsx";
 import {AutoAnimate} from "../components/AutoAnimate.tsx";
@@ -8,7 +8,7 @@ import {AutoAnimate} from "../components/AutoAnimate.tsx";
 export const GettingBetterAgainstAllOdds = ({scroll}: PresentationProps) => (
   <Deck title="Getting better, against all odds" scroll={scroll}>
     {/* Avisi logo(s) */}
-    <Avisi25JaarSlide/>
+    <AvisiLogoSlide/>
 
     {/* Who am I? */}
     <WhoAmISlide/>
