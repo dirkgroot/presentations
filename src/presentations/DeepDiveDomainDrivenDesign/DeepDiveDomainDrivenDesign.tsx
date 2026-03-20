@@ -450,13 +450,18 @@ export const DeepDiveDomainDrivenDesign = ({scroll, shortVersion}: DeepDiveDomai
         <li>Split the <Emphasis><code>Contribution</code></Emphasis> aggregate into two
           aggregates: <Emphasis><code>Contribution</code></Emphasis> and <Emphasis><code>Post</code></Emphasis></li>
         <li>New feature<Emphasis>:</Emphasis> Reply to replies</li>
-        <li>Introduce <Emphasis>Event Sourcing</Emphasis></li>
-        <li>
-          Introduce <Emphasis>CQRS</Emphasis>
-          <ul>
-            <li>Keep track of user reputation in an optimized projection database</li>
-          </ul>
-        </li>
+        {shortVersion
+          ? <></>
+          : <>
+            <li>Introduce <Emphasis>Event Sourcing</Emphasis></li>
+            <li>
+              Introduce <Emphasis>CQRS</Emphasis>
+              <ul>
+                <li>Keep track of user reputation in an optimized projection database</li>
+              </ul>
+            </li>
+          </>
+        }
       </ul>
     </section>
 
