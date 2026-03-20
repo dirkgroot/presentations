@@ -25,8 +25,10 @@ createRoot(document.body).render(
       <Route path="/fp-oop-bffs/scroll" element={<FpOopBestFriendsForever scroll/>}/>
       <Route path="/getting-better-against-all-odds" element={<GettingBetterAgainstAllOdds/>}/>
       <Route path="/getting-better-against-all-odds/scroll" element={<GettingBetterAgainstAllOdds scroll/>}/>
-      <Route path="/deep-dive-ddd" element={<DeepDiveDomainDrivenDesign/>}/>
-      <Route path="/deep-dive-ddd/scroll" element={<DeepDiveDomainDrivenDesign scroll/>}/>
+      <Route path="/deep-dive-ddd" element={<DeepDiveDomainDrivenDesign shortVersion={false}/>}/>
+      <Route path="/deep-dive-ddd/scroll" element={<DeepDiveDomainDrivenDesign shortVersion={false} scroll/>}/>
+      <Route path="/deep-dive-ddd/short" element={<DeepDiveDomainDrivenDesign shortVersion={true}/>}/>
+      <Route path="/deep-dive-ddd/short/scroll" element={<DeepDiveDomainDrivenDesign shortVersion={true} scroll/>}/>
       <Route path="/student-tour" element={<StudentTour/>}/>
       <Route path="/aoc-2025" element={<AoC2025/>}/>
     </Routes>

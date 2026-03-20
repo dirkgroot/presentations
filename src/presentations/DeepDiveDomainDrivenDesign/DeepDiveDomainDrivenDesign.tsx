@@ -17,7 +17,11 @@ import presentatlion_link_qr from "./presentation_link_qr.png";
 import gitlab_link_qr from "./gitlab_link_qr.png";
 import {Column, ColumnLayout} from "../../components/ColumnLayout.tsx";
 
-export const DeepDiveDomainDrivenDesign = ({scroll}: PresentationProps) => (
+interface DeepDiveDomainDrivenDesignProps extends PresentationProps {
+  shortVersion: boolean
+}
+
+export const DeepDiveDomainDrivenDesign = ({scroll, shortVersion}: DeepDiveDomainDrivenDesignProps) => (
   <Deck title={"Deep Dive Domain-Driven Design"} scroll={scroll}>
     {/* Avisi logo(s) */}
     <AvisiLogoSlide/>
@@ -363,23 +367,11 @@ export const DeepDiveDomainDrivenDesign = ({scroll}: PresentationProps) => (
             </ul>
           </div>
         </section>
-
-        {/*<section data-background={Backgrounds.WhiteWithFooter}>*/}
-        {/*  <h1 className={styles.title}>DDD<Emphasis>/</Emphasis>Downtime</h1>*/}
-        {/*  <h2 className={styles.subtitle}>Relax and grab a drink<Emphasis>.</Emphasis></h2>*/}
-        {/*  <h2 className={styles.subtitle}>☕️🫖🥤🍺</h2>*/}
-        {/*</section>*/}
       </AutoAnimate>
     </section>
 
-    <section data-background={Backgrounds.WhiteWithFooter}>
-      <h1 className={styles.title}>DDD<Emphasis>/</Emphasis>Downtime</h1>
-      <h2 className={styles.subtitle}>Time for food<Emphasis>!</Emphasis></h2>
-      <h2 className={styles.subtitle}>☕️🫖🥤🍺</h2>
-    </section>
-
     {/* PART 3: Software Architecture */}
-    <section>
+    <section data-visibility={shortVersion ? "hidden" : "visible"}>
       <AutoAnimate>
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1 className={styles.title}>DDD<Emphasis>/</Emphasis>Departing the Depths</h1>
