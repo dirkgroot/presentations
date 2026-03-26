@@ -569,13 +569,23 @@ export const DeepDiveDomainDrivenDesign = ({scroll, shortVersion}: DeepDiveDomai
       <h1 className={styles.title}>Thank you!</h1>
       <h2 className={styles.subtitle}>Links</h2>
       <ul style={{listStyleType: "none"}}>
-        <li>
-          <b>Slides</b>&nbsp;
-          <a href={"https://presentations.dirkgroot.nl/deep-dive-ddd"} target={"_blank"}>
-            https://presentations.dirkgroot.nl/deep-dive-ddd
-          </a><br/>
-          <img src={presentatlion_link_qr} alt={"Presentation link QR code"} width="300px" height="300px"/>
-        </li>
+        {
+          shortVersion
+            ? <li>
+              <b>Slides</b>&nbsp;
+              <a href={"https://presentations.dirkgroot.nl/deep-dive-ddd/short"} target={"_blank"}>
+                https://presentations.dirkgroot.nl/deep-dive-ddd/short
+              </a><br/>
+              <img src={presentatlion_link_short_qr} alt={"Presentation link QR code"} width="300px" height="300px"/>
+            </li>
+            : <li>
+              <b>Slides</b>&nbsp;
+              <a href={"https://presentations.dirkgroot.nl/deep-dive-ddd"} target={"_blank"}>
+                https://presentations.dirkgroot.nl/deep-dive-ddd
+              </a><br/>
+              <img src={presentatlion_link_qr} alt={"Presentation link QR code"} width="300px" height="300px"/>
+            </li>
+        }
         <li>
           <b>Example code</b>&nbsp;
           <a href={"https://github.com/dirkgroot/deep-dive-ddd"} target={"_blank"}>
