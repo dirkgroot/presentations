@@ -56,8 +56,10 @@ export const DeepDiveDomainDrivenDesign = ({scroll, shortVersion}: DeepDiveDomai
       <ul>
         <li>Definition</li>
         <li>Diving Deeper (Demo)</li>
-        <li>Departing the Depths<Emphasis>*</Emphasis><br/><small className={"fragment"}><Emphasis>*</Emphasis> Software
-          Architecture</small></li>
+        {
+          shortVersion ? <></> : <li>Departing the Depths<Emphasis>*</Emphasis><br/><small
+            className={"fragment"}><Emphasis>*</Emphasis> Software Architecture</small></li>
+        }
       </ul>
       <p>
 
