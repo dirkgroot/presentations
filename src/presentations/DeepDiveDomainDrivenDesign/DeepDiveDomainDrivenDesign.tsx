@@ -14,6 +14,7 @@ import ddd from "./ddd.png";
 import ddd_es from "./ddd-es.png";
 import ddd_es_cqrs from "./ddd-es-cqrs.png";
 import presentatlion_link_qr from "./presentation_link_qr.png";
+import presentatlion_link_short_qr from "./presentation_link_short_qr.png";
 import gitlab_link_qr from "./gitlab_link_qr.png";
 import {Column, ColumnLayout} from "../../components/ColumnLayout.tsx";
 
@@ -80,7 +81,7 @@ export const DeepDiveDomainDrivenDesign = ({scroll, shortVersion}: DeepDiveDomai
         </section>
 
         {/* PART 1: Strategic DDD */}
-        <section data-background={Backgrounds.WhiteWithFooter}>
+        <section data-background={Backgrounds.WhiteWithFooter} data-visibility={shortVersion ? "hidden" : "visible"}>
           <h1 className={styles.title}>DDD<Emphasis>/</Emphasis>Definition</h1>
           <h2 className={styles.subtitle}>Strategic DDD<Emphasis>.</Emphasis></h2>
           <ul>
@@ -120,7 +121,7 @@ export const DeepDiveDomainDrivenDesign = ({scroll, shortVersion}: DeepDiveDomai
         </section>
 
         {/* PART 1b: Bounded Context */}
-        <section data-background={Backgrounds.WhiteWithFooter}>
+        <section data-visibility={shortVersion ? "hidden" : "visible"} data-background={Backgrounds.WhiteWithFooter}>
           <h1 className={styles.title}>DDD<Emphasis>/</Emphasis>Definition</h1>
           <h2 className={styles.subtitle}>Bounded Context<Emphasis>.</Emphasis></h2>
           <p>
@@ -138,6 +139,75 @@ export const DeepDiveDomainDrivenDesign = ({scroll, shortVersion}: DeepDiveDomai
       <AutoAnimate>
         <section data-background={Backgrounds.WhiteWithFooter}>
           <h1 className={styles.title}>DDD<Emphasis>/</Emphasis>Diving Deeper</h1>
+        </section>
+
+        <section data-background={Backgrounds.WhiteWithFooter}>
+          <h1 className={styles.title}>DDD<Emphasis>/</Emphasis>Diving Deeper</h1>
+          <h2 className={styles.subtitle}>Background<Emphasis>:</Emphasis> The 3-tier application
+            architecture<Emphasis>.</Emphasis></h2>
+          <MermaidDiagram id={"domainmodel"} data-id={"domainmodel-diagram"}>
+            {
+              // language=Mermaid
+              `%%{init: {
+                'themeVariables': {'fontFamily': 'Poppins','fontSize': '26px'},
+                'flowchart': {'nodeSpacing': 90,'rankSpacing': 90},
+                'class': {'hideEmptyMembersBox': true}
+              }}%%
+              classDiagram
+                direction TD
+                class Presentation
+                class BusinessLogic
+                class Data
+
+                Presentation --> BusinessLogic
+                BusinessLogic --> Data
+                style Presentation fill: lightblue
+                style BusinessLogic fill: lightyellow
+                style Data fill: lightgreen
+              `}
+          </MermaidDiagram>
+        </section>
+
+        <section data-background={Backgrounds.WhiteWithFooter}>
+          <h1 className={styles.title}>DDD<Emphasis>/</Emphasis>Diving Deeper</h1>
+          <h2 className={styles.subtitle}>Background<Emphasis>:</Emphasis> The 3-tier application
+            architecture<Emphasis>.</Emphasis></h2>
+          <ul>
+            <li>
+              Presentation
+              <ul className={"fragment"}>
+                <li>REST Controllers</li>
+                <li>JMS Listeners</li>
+                <li>Console</li>
+              </ul>
+            </li>
+            <li>
+              Business logic
+              <ul className={"fragment"}>
+                <li>Services</li>
+              </ul>
+            </li>
+            <li>
+              Data
+              <ul className={"fragment"}>
+                <li>Entities (JPA)</li>
+                <li>Repositories</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section data-background={Backgrounds.WhiteWithFooter}>
+          <h1 className={styles.title}>DDD<Emphasis>/</Emphasis>Diving Deeper</h1>
+          <h2 className={styles.subtitle}>Background<Emphasis>:</Emphasis> The 3-tier application
+            architecture<Emphasis>.</Emphasis></h2>
+          <h3>Issues</h3>
+          <ul>
+            <li className={"fragment"}>Primitive obsession</li>
+            <li className={"fragment"}>Lack of encapsulation</li>
+            <li className={"fragment"}>Duplicated input validation</li>
+            <li className={"fragment"}>Anemic domain model</li>
+          </ul>
         </section>
 
         <section data-background={Backgrounds.WhiteWithFooter}>
