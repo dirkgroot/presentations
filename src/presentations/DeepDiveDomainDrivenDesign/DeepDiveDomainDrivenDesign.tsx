@@ -57,13 +57,10 @@ export const DeepDiveDomainDrivenDesign = ({scroll, shortVersion}: DeepDiveDomai
         <li>Definition</li>
         <li>Diving Deeper (Demo)</li>
         {
-          shortVersion ? <></> : <li>Departing the Depths<Emphasis>*</Emphasis><br/><small
+          !shortVersion && <li>Departing the Depths<Emphasis>*</Emphasis><br/><small
             className={"fragment"}><Emphasis>*</Emphasis> Software Architecture</small></li>
         }
       </ul>
-      <p>
-
-      </p>
     </section>
 
     {/* INTRO: DDD:Definition */}
@@ -147,7 +144,7 @@ export const DeepDiveDomainDrivenDesign = ({scroll, shortVersion}: DeepDiveDomai
           <h1 className={styles.title}>DDD<Emphasis>/</Emphasis>Diving Deeper</h1>
           <h2 className={styles.subtitle}>Background<Emphasis>:</Emphasis> The 3-tier application
             architecture<Emphasis>.</Emphasis></h2>
-          <MermaidDiagram id={"domainmodel"} data-id={"domainmodel-diagram"}>
+          <MermaidDiagram id={"3-tier-architecture"} data-id={"domainmodel-diagram"}>
             {
               // language=Mermaid
               `%%{init: {
@@ -522,18 +519,15 @@ export const DeepDiveDomainDrivenDesign = ({scroll, shortVersion}: DeepDiveDomai
         <li>Split the <Emphasis><code>Contribution</code></Emphasis> aggregate into two
           aggregates: <Emphasis><code>Contribution</code></Emphasis> and <Emphasis><code>Post</code></Emphasis></li>
         <li>New feature<Emphasis>:</Emphasis> Reply to replies</li>
-        {shortVersion
-          ? <></>
-          : <>
-            <li>Introduce <Emphasis>Event Sourcing</Emphasis></li>
-            <li>
-              Introduce <Emphasis>CQRS</Emphasis>
-              <ul>
-                <li>Keep track of user reputation in an optimized projection database</li>
-              </ul>
-            </li>
-          </>
-        }
+        {!shortVersion && <>
+          <li>Introduce <Emphasis>Event Sourcing</Emphasis></li>
+          <li>
+            Introduce <Emphasis>CQRS</Emphasis>
+            <ul>
+              <li>Keep track of user reputation in an optimized projection database</li>
+            </ul>
+          </li>
+        </>}
       </ul>
     </section>
 
