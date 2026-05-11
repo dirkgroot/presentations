@@ -2,6 +2,7 @@ import Reveal from "reveal.js";
 import {PropsWithChildren, useEffect, useRef} from "react";
 import RevealHighlight from "reveal.js/plugin/highlight/highlight";
 import RevealNotes from "reveal.js/plugin/notes/notes";
+import RevealMath from "reveal.js/plugin/math/math";
 
 import "reveal.js/dist/reset.css";
 import "reveal.js/dist/reveal.css";
@@ -42,7 +43,7 @@ export const Deck = ({children, title, scroll}: DeckProps) => {
 
       pdfSeparateFragments: false,
 
-      plugins: [RevealHighlight, RevealNotes],
+      plugins: [RevealHighlight, RevealNotes, RevealMath],
     });
 
     deckRef.current.initialize().then(() => {
