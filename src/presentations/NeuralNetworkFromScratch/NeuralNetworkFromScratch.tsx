@@ -24,7 +24,8 @@ export const NeuralNetworkFromScratch = ({scroll}: PresentationProps) => (
       <section data-background={Backgrounds.WhiteWithFooter}>
         <h1 className={styles.title}>Neural network from scratch<Emphasis>.</Emphasis></h1>
         <h2 className={styles.subtitle}>AI under the hood,
-          a <Emphasis>gentle</Emphasis> introduction<Emphasis>.</Emphasis></h2>
+          a <Emphasis>gentle</Emphasis><sup><Emphasis>*</Emphasis></sup> introduction<Emphasis>.</Emphasis></h2>
+        <small><sup><Emphasis>*</Emphasis></sup>kind of</small>
       </section>
 
       {/* Who am I? */}
@@ -234,10 +235,10 @@ export const NeuralNetworkFromScratch = ({scroll}: PresentationProps) => (
                 <p>
                   Finding values for the <Emphasis>weights</Emphasis> and <Emphasis>bias</Emphasis> of a neuron, so its
                   output <Emphasis>approximates</Emphasis> the <Emphasis> desired outputs</Emphasis> for a given set
-                  of <Emphasis>training samples</Emphasis><sup>*</sup>.
+                  of <Emphasis>training samples</Emphasis><sup><Emphasis>*</Emphasis></sup>.
                 </p>
                 <p className={"fragment"}>
-                  <small><sup>*</sup>Input values for
+                  <small><sup><Emphasis>*</Emphasis></sup>Input values for
                     the <Emphasis>neuron</Emphasis> for which we know the <Emphasis>desired
                       output</Emphasis> value.</small>
                   <img src={handwritten_digits} alt={"Training samples"}/>
@@ -258,13 +259,16 @@ export const NeuralNetworkFromScratch = ({scroll}: PresentationProps) => (
                   <span className={"fragment"}>and after each one make a small correction to
                     its <Emphasis>weights</Emphasis> and <Emphasis>bias</Emphasis>, </span>
                   <span className={"fragment"}> so that it slowly gets better at producing the
-                    correct<sup>*</sup> <Emphasis>output</Emphasis></span>
-                  <span className={"fragment"}> for every<sup>**</sup> <Emphasis>training sample</Emphasis>.</span>
+                    correct<sup><Emphasis>*</Emphasis></sup> <Emphasis>output</Emphasis></span>
+                  <span
+                    className={"fragment"}> for every<sup><Emphasis>**</Emphasis></sup> <Emphasis>training sample</Emphasis>.</span>
                 </p>
                 <p>
-                  <small className={"fragment"}><sup>*</sup>In practice this is a close-enough approximation</small>
+                  <small className={"fragment"}><sup><Emphasis>*</Emphasis></sup>In practice this is a close-enough
+                    approximation</small>
                   <br/>
-                  <small className={"fragment"}><sup>**</sup>In practice this means as many as possible, 100% accuracy is
+                  <small className={"fragment"}><sup><Emphasis>**</Emphasis></sup>In practice this means as many as
+                    possible, 100% accuracy is
                     usually not achievable</small>
                 </p>
               </Column>
@@ -294,11 +298,11 @@ export const NeuralNetworkFromScratch = ({scroll}: PresentationProps) => (
                       </li>
                       <li className={"fragment"} data-fragment-index={"3"}>
                         📈 Adjust the <Emphasis>weights</Emphasis> and <Emphasis>bias</Emphasis> by a tiny
-                        fraction<sup>*</sup> of the <Emphasis>error</Emphasis>
+                        fraction<sup><Emphasis>*</Emphasis></sup> of the <Emphasis>error</Emphasis>
                       </li>
                       <li className={"fragment"} data-fragment-index={"4"}>
                         💡 Next time we encounter this training sample, the <Emphasis>error</Emphasis> will be
-                        lower<sup>**</sup>
+                        lower<sup><Emphasis>**</Emphasis></sup>
                       </li>
                     </ol>
                   </li>
@@ -306,10 +310,11 @@ export const NeuralNetworkFromScratch = ({scroll}: PresentationProps) => (
                 <p>
                   <br/>
                   <small className={"fragment"} data-fragment-index={"3"}>
-                    <sup>*</sup>We call this the <Emphasis>learning rate</Emphasis>
+                    <sup><Emphasis>*</Emphasis></sup>We call this the <Emphasis>learning rate</Emphasis>
                   </small>
                   <small className={"fragment"} data-fragment-index={"4"}>
-                    <sup>**</sup><Emphasis>actual output</Emphasis> will be a little bit closer to the <Emphasis>desired
+                    <sup><Emphasis>**</Emphasis></sup><Emphasis>actual output</Emphasis> will be a little bit closer to
+                    the <Emphasis>desired
                     output</Emphasis>
                   </small>
                 </p>
@@ -410,13 +415,16 @@ export const NeuralNetworkFromScratch = ({scroll}: PresentationProps) => (
                   <span className={"fragment"}>and after each one make a small correction to
                     the <Emphasis>weights</Emphasis> and <Emphasis>bias</Emphasis> of all neurons, </span>
                   <span className={"fragment"}> so that it slowly gets better at producing the
-                    correct<sup>*</sup> <Emphasis>output</Emphasis></span>
-                  <span className={"fragment"}> for every<sup>**</sup> <Emphasis>training sample</Emphasis>.</span>
+                    correct<sup><Emphasis>*</Emphasis></sup> <Emphasis>output</Emphasis></span>
+                  <span
+                    className={"fragment"}> for every<sup><Emphasis>**</Emphasis></sup> <Emphasis>training sample</Emphasis>.</span>
                 </p>
                 <p>
-                  <small className={"fragment"}><sup>*</sup>In practice this is a close-enough approximation</small>
+                  <small className={"fragment"}><sup><Emphasis>*</Emphasis></sup>In practice this is a close-enough
+                    approximation</small>
                   <br/>
-                  <small className={"fragment"}><sup>**</sup>In practice this means as many as possible, 100% accuracy is
+                  <small className={"fragment"}><sup><Emphasis>**</Emphasis></sup>In practice this means as many as
+                    possible, 100% accuracy is
                     usually not achievable</small>
                 </p>
               </Column>
@@ -470,15 +478,14 @@ export const NeuralNetworkFromScratch = ({scroll}: PresentationProps) => (
             <ColumnLayout>
               <Column centerVertically>
                 <h1>Considerations<Emphasis>.</Emphasis></h1>
-                <h2 className={styles.subtitle}>Bias<Emphasis>.</Emphasis></h2>
               </Column>
               <Column centerVertically>
+                <h3 className={styles.subtitle}>Bias</h3>
                 <p>When you teach a model using examples that don't fairly represent the real world, it picks up those
                   unfair patterns and repeats them in its answers.</p>
                 <div className={"fragment"}>
-                  <p><b>Example<Emphasis>:</Emphasis></b></p>
-                  <p>Train face recognition using only images of people with light skin. It will perform poorly on darker
-                    skinned people.</p>
+                  <p><b>Example<Emphasis>:</Emphasis></b> Train face recognition using only images of people with light
+                    skin. It will perform poorly on darker skinned people.</p>
                 </div>
               </Column>
             </ColumnLayout>
@@ -488,13 +495,13 @@ export const NeuralNetworkFromScratch = ({scroll}: PresentationProps) => (
             <ColumnLayout>
               <Column centerVertically>
                 <h1>Considerations<Emphasis>.</Emphasis></h1>
-                <h2 className={styles.subtitle}>Distribution shift<Emphasis>.</Emphasis></h2>
               </Column>
               <Column centerVertically>
+                <h3 className={styles.subtitle}>Distribution shift</h3>
                 <p>When real world data looks different from the training data.</p>
                 <div className={"fragment"}>
-                  <p><b>Example<Emphasis>:</Emphasis></b></p>
-                  <p>Train on neatly written digits. Real world consists mostly of sloppy handwriting.</p>
+                  <p><b>Example<Emphasis>:</Emphasis></b> Train on neatly written digits. Real world consists mostly of
+                    sloppy handwriting.</p>
                 </div>
               </Column>
             </ColumnLayout>
@@ -504,12 +511,13 @@ export const NeuralNetworkFromScratch = ({scroll}: PresentationProps) => (
             <ColumnLayout>
               <Column centerVertically>
                 <h1>Considerations<Emphasis>.</Emphasis></h1>
-                <h2 className={styles.subtitle}>Questions to think about<Emphasis>.</Emphasis></h2>
               </Column>
               <Column centerVertically>
                 <ul>
+                  <h3 className={styles.subtitle}>Questions to think about</h3>
                   <li>To what extent does a model <Emphasis>generalize</Emphasis>?</li>
                   <li>To what extent does a model <Emphasis>understand</Emphasis>?</li>
+                  <li>Are neural networks <Emphasis>intelligent</Emphasis>?</li>
                 </ul>
               </Column>
             </ColumnLayout>
@@ -517,9 +525,9 @@ export const NeuralNetworkFromScratch = ({scroll}: PresentationProps) => (
         </AutoAnimate>
       </section>
 
-      {/* FURTHER READING */}
+      {/* MORE INFORMATION */}
       <section data-background={Backgrounds.WhiteWithFooter}>
-        <h1 className={styles.title}>Further reading/watching<Emphasis>.</Emphasis></h1>
+        <h1 className={styles.title}>More information<Emphasis>.</Emphasis></h1>
         <ul>
           <li>The talk that inspired this talk<br/>
             <a href="https://www.youtube.com/watch?v=z8DY5DndmxI" target="_blank" rel="noreferrer">
