@@ -80,6 +80,19 @@ export const PresentationListPage = () => (
           <td><Link to="/deep-dive-ddd/short/scroll" target="_blank">open</Link></td>
         </tr>
         <tr>
+          <th>Neural network from scratch</th>
+          <td>
+            To many people, AI feels like magic. In this talk, we'll try remove the veil of magic and take a look under
+            the hood. An important building block of modern AI is a neural network. Once you understand how neural
+            networks work, it's much easier to learn how and why LLMs work.
+            <br/><br/>
+            What better way to understand something than to build it from scratch? That's exactly what we'll do in this
+            talk. While doing so, we'll learn about neurons, activation functions, backpropagation, and more.
+          </td>
+          <td><Link to="/neural-network-from-scratch" target="_blank">open</Link></td>
+          <td><Link to="/neural-network-from-scratch/scroll" target="_blank">open</Link></td>
+        </tr>
+        <tr>
           <th>Getting better, against all odds</th>
           <td>
             Getting better is not always as easy as it seems. Team and organisation dynamics can make it really hard to
