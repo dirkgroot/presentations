@@ -23,7 +23,8 @@ export const NeuralNetworkFromScratch = ({scroll}: PresentationProps) => (
       {/* TITLE */}
       <section data-background={Backgrounds.WhiteWithFooter}>
         <h1 className={styles.title}>Neural network from scratch<Emphasis>.</Emphasis></h1>
-        <h2 className={styles.subtitle}>An in-depth look under the hood of AI<Emphasis>.</Emphasis></h2>
+        <h2 className={styles.subtitle}>AI under the hood,
+          a <Emphasis>gentle</Emphasis> introduction<Emphasis>.</Emphasis></h2>
       </section>
 
       {/* Who am I? */}
