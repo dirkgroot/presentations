@@ -93,6 +93,23 @@ export const PresentationListPage = () => (
           <td><Link to="/neural-network-from-scratch/scroll" target="_blank">open</Link></td>
         </tr>
         <tr>
+          <th>Unit testing & Architecture</th>
+          <td>
+            Why is this test failing? What is actually being tested here? Why does this error occur in production —
+            wasn't this tested? Why do tests fail after a refactoring? Just a few examples of questions you might ask
+            yourself when dealing with tests or (production) issues.
+            <br/><br/>
+            In this talk we will look at how to set up unit and integration tests in such a way that you won't have
+            to ask these kinds of questions very often. We will also look at how to structure your software architecture
+            in a testable way. Whether you can set up your tests properly depends largely on the architecture of your
+            application.
+            <br/><br/>
+            A good software architecture is a testable software architecture!
+          </td>
+          <td><Link to="/unit-testing-and-architecture" target="_blank">open</Link></td>
+          <td><Link to="/unit-testing-and-architecture/scroll" target="_blank">open</Link></td>
+        </tr>
+        <tr>
           <th>Getting better, against all odds</th>
           <td>
             Getting better is not always as easy as it seems. Team and organisation dynamics can make it really hard to

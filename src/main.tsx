@@ -12,6 +12,7 @@ import {FpOopBestFriendsForever} from "./presentations/FpOOpBestFriendsForever/F
 import {DeepDiveDomainDrivenDesign} from "./presentations/DeepDiveDomainDrivenDesign/DeepDiveDomainDrivenDesign.tsx";
 import {AoC2025} from "./presentations/AoC2025/AoC2025.tsx";
 import {NeuralNetworkFromScratch} from "./presentations/NeuralNetworkFromScratch/NeuralNetworkFromScratch.tsx";
+import {UnitTestingAndArchitecture} from "./presentations/UnitTestingAndArchitecture/UnitTestingAndArchitecture.tsx";
 
 createRoot(document.body).render(
   <BrowserRouter>
@@ -31,6 +32,8 @@ createRoot(document.body).render(
       <Route path="/deep-dive-ddd/short/scroll" element={<DeepDiveDomainDrivenDesign shortVersion={true} scroll/>}/>
       <Route path="/neural-network-from-scratch" element={<NeuralNetworkFromScratch/>}/>
       <Route path="/neural-network-from-scratch/scroll" element={<NeuralNetworkFromScratch scroll/>}/>
+      <Route path="/unit-testing-and-architecture" element={<UnitTestingAndArchitecture/>}/>
+      <Route path="/unit-testing-and-architecture/scroll" element={<UnitTestingAndArchitecture scroll/>}/>
       <Route path="/aoc-2025" element={<AoC2025/>}/>
     </Routes>
   </BrowserRouter>,
