@@ -21,8 +21,7 @@ export const UnitTestingAndArchitecture = ({scroll}: PresentationProps) => (
         <li>Test types</li>
         <li>Why do we test?</li>
         <li>Test desiderata</li>
-        <li>Testable software architecture</li>
-        <li>Unit test design & patterns</li>
+        <li>Software architecture & testing</li>
       </ul>
     </section>
 
@@ -188,7 +187,8 @@ export const UnitTestingAndArchitecture = ({scroll}: PresentationProps) => (
     <section>
       <AutoAnimate>
         <section data-background={Backgrounds.WhiteWithFooter}>
-          <h1 className={styles.title}>Recap: Triangular Architecture<Emphasis>.</Emphasis></h1>
+          <h1 className={styles.title}>Software architecture & testing<Emphasis>.</Emphasis></h1>
+          <h2 className={styles.subtitle}>Recap: Triangular Architecture<Emphasis>.</Emphasis></h2>
           <img className={"fragment"} src={triangularArchitecture} alt={"Triangular Architecture Diagram"}/>
           <ul>
             <li className={"fragment"}><Emphasis>Application</Emphasis> implements use cases and coördinates actions
