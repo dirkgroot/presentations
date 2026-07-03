@@ -291,6 +291,13 @@ export const UnitTestingAndArchitecture = ({scroll}: PresentationProps) => (
           </a><br/><br/>
           <QRCode value={"https://presentations.dirkgroot.nl/unit-testing-and-architecture"} size={250}></QRCode>
         </li>
+        <li>
+          <b>Example code</b>&nbsp;
+          <a href={"https://github.com/dirkgroot/tic-tac-toe"} target={"_blank"}>
+            https://github.com/dirkgroot/tic-tac-toe
+          </a><br/><br/>
+          <QRCode value={"https://github.com/dirkgroot/tic-tac-toe"} size={250}></QRCode>
+        </li>
       </ul>
     </section>
   </Deck>
