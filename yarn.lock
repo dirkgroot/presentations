@@ -2918,10 +2918,10 @@ reusify@^1.0.4:
   resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.1.0.tgz#0fe13b9522e1473f51b558ee796e08f11f9b489f"
   integrity sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==
 
-reveal.js@^5.1.0:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/reveal.js/-/reveal.js-5.2.1.tgz#22e5f4aca16b2b9efc0fef7b8b62455861fef39c"
-  integrity sha512-r7//6mIM5p34hFiDMvYfXgyjXqGRta+/psd9YtytsgRlrpRzFv4RbH76TXd2qD+7ZPZEbpBDhdRhJaFgfQ7zNQ==
+reveal.js@^6.0.0:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/reveal.js/-/reveal.js-6.0.2.tgz#4249dcbb9b98417c341b9b8af4ddee91e152b0e4"
+  integrity sha512-JYIg5D9aoxoaLeb84O+OvAwsKWdIavVgEDScxtYEXFCT6t6TQrhNtSgogcjdCpdLsWglhJn3zyE3fUOwiH5KEg==
 
 robust-predicates@^3.0.2:
   version "3.0.3"
