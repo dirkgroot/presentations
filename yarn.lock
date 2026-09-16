@@ -2879,16 +2879,16 @@ react-qr-code@^2.0.21:
     qrcode-generator "^2.0.4"
 
 react-router-dom@^7.4.0:
-  version "7.17.0"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-7.17.0.tgz#e77527b4b7862f7b47ff26dd5b9315fb897b82a7"
-  integrity sha512-fyU2yjGups/hE6Xz0I5ZYbVL8Gx29eCjgpHaRaTaVU+OOAdfRX05KsvyRm0GO8YQwOkhpU3MurW1jyMUJn+zSw==
+  version "7.18.4"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-7.18.4.tgz#07b72b8aab2d80af847425107f966f1688c703d0"
+  integrity sha512-yrfmJHIpDG7taCpqKjT1G5B6q3O2K+RN8/fgNf0lTjCwiPbQ0ei6vXX9ZjQR+7ld8Tr7Z5xmyMnZ8YJrphWQUw==
   dependencies:
-    react-router "7.17.0"
+    react-router "7.18.4"
 
-react-router@7.17.0:
-  version "7.17.0"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-7.17.0.tgz#88bbe817c6e37ab36faf140623b5d4678bf81e41"
-  integrity sha512-FDELK7rTMlCHO5+reyXsPlmfr7N1F91lPHsWYfMEGQm/KQ+F4JFM8jGoeQDmDvdTs93Fw9aSilH+uKRb4/jXvQ==
+react-router@7.18.4:
+  version "7.18.4"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-7.18.4.tgz#dc30cbb27e936f06d9e1d75ab648b317deb698a4"
+  integrity sha512-PUPQcMhMGRAslLcvtlPz/kmzBEWPhLdgLFrL7pLNepBL6dX0lWj4WD2cUYVgYCuT3jxvghYFg81cDTj44DhetQ==
   dependencies:
     cookie "^1.0.1"
     set-cookie-parser "^2.6.0"
