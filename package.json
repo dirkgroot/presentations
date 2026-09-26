@@ -20,7 +20,7 @@
     "react-dom": "^19.0.0",
     "react-qr-code": "^2.0.21",
     "react-router-dom": "^7.4.0",
-    "reveal.js": "^5.1.0",
+    "reveal.js": "^6.0.0",
     "yarn": "^1.22.22"
   },
   "devDependencies": {
