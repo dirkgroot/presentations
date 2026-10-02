@@ -15,7 +15,7 @@
     "@lightenna/react-mermaid-diagram": "^1.0.17",
     "add": "^2.0.6",
     "highlight.js": "^11.11.1",
-    "mermaid": "^11.4.1",
+    "mermaid": "^12.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-qr-code": "^2.0.21",
